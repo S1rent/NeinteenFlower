@@ -8,12 +8,9 @@ namespace NeinteenFlower
 {
     public class CommonRepository
     {
-        public NeinteenFlowerDBEntities db = new NeinteenFlowerDBEntities();
-        public static CommonRepository shared = new CommonRepository();
-        private CommonRepository() { }
-
-        public List<MsEmployee> GetEmployeeByEmail(string email)
+        public static List<MsEmployee> GetEmployeeByEmail(string email)
         {
+            NeinteenFlowerDBEntities db = new NeinteenFlowerDBEntities();
             List<MsEmployee> employeeList = (
                 from employeeData in db.MsEmployees
                 where employeeData.EmployeeEmail.Equals(email)
@@ -23,8 +20,9 @@ namespace NeinteenFlower
             return employeeList;
         }
 
-        public List<MsMember> GetMemberByEmail(string email)
+        public static List<MsMember> GetMemberByEmail(string email)
         {
+            NeinteenFlowerDBEntities db = new NeinteenFlowerDBEntities();
             List<MsMember> memberList = (
                 from memberData in db.MsMembers
                 where memberData.MemberEmail.Equals(email)

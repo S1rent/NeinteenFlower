@@ -21,14 +21,16 @@ namespace NeinteenFlower_FrontEnd.View
             LabelErrorMessage.ForeColor = System.Drawing.Color.Red;
             string email = TextBoxEmail.Text.Trim(),
                    password = TextBoxPassword.Text.Trim();
+            string response = controller.Login(email, password);
 
-            if(controller.CheckUserEmailExist(email))
+            if (response.Equals(""))
             {
-
-            } 
-            else if(controller.ValidatePassword())
+                LabelErrorMessage.Visible = false;
+            }
+            else
             {
-
+                LabelErrorMessage.Visible = true;
+                LabelErrorMessage.Text = response;
             }
         }
     }

@@ -1,5 +1,4 @@
 ﻿using NeinteenFlower.Handler;
-using NeinteenFlower.Model;
 using NeinteenFlower.WebService;
 using System;
 using System.Collections.Generic;
@@ -13,9 +12,15 @@ namespace NeinteenFlower_FrontEnd.Handler
         public NeinteenFlowerWebService webService = new NeinteenFlowerWebService();
         public CommonHandlerFrontEnd() { }
 
-        public bool CheckUserEmailExist(string email)
+        public bool CheckMemberEmailExist(string email)
         {
-            string isUserEmailExist = webService.CheckUserEmailExist(email);
+            string isUserEmailExist = webService.CheckMemberEmailExist(email);
+            return JSONHandler.shared.Decode<bool>(isUserEmailExist);
+        }
+
+        public bool CheckEmployeeEmailExist(string email)
+        {
+            string isUserEmailExist = webService.CheckEmployeeEmailExist(email);
             return JSONHandler.shared.Decode<bool>(isUserEmailExist);
         }
 

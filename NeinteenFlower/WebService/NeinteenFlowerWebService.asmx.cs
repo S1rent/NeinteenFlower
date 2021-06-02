@@ -25,9 +25,15 @@ namespace NeinteenFlower.WebService
         }
 
         [WebMethod]
-        public string CheckUserEmailExist(string email)
+        public string CheckMemberEmailExist(string email)
         {
-            return CommonHandler.shared.CheckUserEmailExist(email);
+            return CommonHandler.shared.CheckMemberEmailExist(email);
+        }
+
+        [WebMethod]
+        public string CheckEmployeeEmailExist(string email)
+        {
+            return CommonHandler.shared.CheckEmployeeEmailExist(email);
         }
 
         [WebMethod]

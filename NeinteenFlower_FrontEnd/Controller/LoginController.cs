@@ -10,14 +10,51 @@ namespace NeinteenFlower_FrontEnd.Controller
     {
         CommonHandlerFrontEnd handler = new CommonHandlerFrontEnd();
         public LoginController() { }
-        public bool CheckUserEmailExist(string email)
+        public string Login(string email, string password)
         {
-            return handler.CheckUserEmailExist(email);
-        }
+            bool isMember = handler.CheckMemberEmailExist(email);
+            bool isEmployee = handler.CheckEmployeeEmailExist(email);
 
-        public bool ValidatePassword(bool isEmployee, string email, string password)
-        {
-            return handler.ValidatePassword(isEmployee, email, password);
+            if (email.Length == 0)
+            {
+                return "Email cannot be empty.";
+            }
+            else if (password.Length == 0)
+            {
+                return "Password cannot be empty.";
+            }
+            else if (!isMember && !isEmployee)
+            {
+                return "Email is not found.";
+            }
+            else if (isMember)
+            {
+                bool isPasswordValid = handler.ValidatePassword(false, email, password);
+                if (isPasswordValid)
+                {
+                    return "";
+                }
+                else
+                {
+                    return "Wrong password.";
+                }
+            }
+            else if (isEmployee)
+            {
+                bool isPasswordValid = handler.ValidatePassword(true, email, password);
+                if (isPasswordValid)
+                {
+                    return "";
+                }
+                else
+                {
+                    return "Wrong password.";
+                }
+            }
+            else
+            {
+                return "Error, Please try again later.";
+            }
         }
     }
 }

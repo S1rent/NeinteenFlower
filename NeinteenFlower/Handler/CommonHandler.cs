@@ -9,13 +9,21 @@ namespace NeinteenFlower.Handler
     public class CommonHandler
     {
         public static CommonHandler shared = new CommonHandler();
-        public string CheckUserEmailExist(string email)
+        public string CheckMemberEmailExist(string email)
         {
-            if(CommonRepository.shared.GetEmployeeByEmail(email).Count != 0)
+            if (CommonRepository.GetMemberByEmail(email).Count != 0)
             {
                 return JSONHandler.shared.Encode(true);
             }
-            else if(CommonRepository.shared.GetMemberByEmail(email).Count != 0)
+            else
+            {
+                return JSONHandler.shared.Encode(false);
+            }
+        }
+
+        public string CheckEmployeeEmailExist(string email)
+        {
+            if (CommonRepository.GetEmployeeByEmail(email).Count != 0)
             {
                 return JSONHandler.shared.Encode(true);
             }
@@ -29,7 +37,7 @@ namespace NeinteenFlower.Handler
         {
             if (isEmployee)
             {
-                List<MsEmployee> employeeList = CommonRepository.shared.GetEmployeeByEmail(email);
+                List<MsEmployee> employeeList = CommonRepository.GetEmployeeByEmail(email);
 
                 if (employeeList.Count == 0)
                 {
@@ -49,7 +57,7 @@ namespace NeinteenFlower.Handler
             }
             else
             {
-                List<MsMember> memberList = CommonRepository.shared.GetMemberByEmail(email);
+                List<MsMember> memberList = CommonRepository.GetMemberByEmail(email);
 
                 if (memberList.Count == 0)
                 {
