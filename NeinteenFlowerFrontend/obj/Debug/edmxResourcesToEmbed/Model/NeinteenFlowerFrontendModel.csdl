@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NeinteenFlowerDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="MsEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmployeeDOB" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmployeeGender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmployeeAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmployeePhone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmployeeEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EmployeeSalary" Type="Int32" Nullable="false" />
+    <Property Name="EmployeePassword" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TrHeaders" Relationship="Self.FK__TrHeader__Employ__2A4B4B5E" FromRole="MsEmployee" ToRole="TrHeader" />
+  </EntityType>
+  <EntityType Name="MsFlower">
+    <Key>
+      <PropertyRef Name="FlowerID" />
+    </Key>
+    <Property Name="FlowerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FlowerName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FlowerTypeID" Type="Int32" Nullable="false" />
+    <Property Name="FlowerDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FlowerPrice" Type="Int32" Nullable="false" />
+    <Property Name="FlowerImage" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="MsFlowerType" Relationship="Self.FK__MsFlower__Flower__2D27B809" FromRole="MsFlower" ToRole="MsFlowerType" />
+    <NavigationProperty Name="TrDetails" Relationship="Self.FK__TrDetail__Flower__30F848ED" FromRole="MsFlower" ToRole="TrDetail" />
+  </EntityType>
+  <EntityType Name="MsFlowerType">
+    <Key>
+      <PropertyRef Name="FlowerTypeID" />
+    </Key>
+    <Property Name="FlowerTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FlowerTypeName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="MsFlowers" Relationship="Self.FK__MsFlower__Flower__2D27B809" FromRole="MsFlowerType" ToRole="MsFlower" />
+  </EntityType>
+  <EntityType Name="MsMember">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MemberDOB" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MemberGender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MemberAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MemberPhone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MemberEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MemberPassword" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="TrHeaders" Relationship="Self.FK__TrHeader__Member__29572725" FromRole="MsMember" ToRole="TrHeader" />
+  </EntityType>
+  <EntityType Name="TrDetail">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+      <PropertyRef Name="FlowerID" />
+    </Key>
+    <Property Name="TransactionID" Type="Int32" Nullable="false" />
+    <Property Name="FlowerID" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MsFlower" Relationship="Self.FK__TrDetail__Flower__30F848ED" FromRole="TrDetail" ToRole="MsFlower" />
+    <NavigationProperty Name="TrHeader" Relationship="Self.FK__TrDetail__Transa__300424B4" FromRole="TrDetail" ToRole="TrHeader" />
+  </EntityType>
+  <EntityType Name="TrHeader">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberID" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="TransactionDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DiscountPercentage" Type="Int32" />
+    <NavigationProperty Name="MsEmployee" Relationship="Self.FK__TrHeader__Employ__2A4B4B5E" FromRole="TrHeader" ToRole="MsEmployee" />
+    <NavigationProperty Name="MsMember" Relationship="Self.FK__TrHeader__Member__29572725" FromRole="TrHeader" ToRole="MsMember" />
+    <NavigationProperty Name="TrDetails" Relationship="Self.FK__TrDetail__Transa__300424B4" FromRole="TrHeader" ToRole="TrDetail" />
+  </EntityType>
+  <Association Name="FK__TrHeader__Employ__2A4B4B5E">
+    <End Role="MsEmployee" Type="Self.MsEmployee" Multiplicity="1" />
+    <End Role="TrHeader" Type="Self.TrHeader" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MsEmployee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="TrHeader">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MsFlower__Flower__2D27B809">
+    <End Role="MsFlowerType" Type="Self.MsFlowerType" Multiplicity="1" />
+    <End Role="MsFlower" Type="Self.MsFlower" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MsFlowerType">
+        <PropertyRef Name="FlowerTypeID" />
+      </Principal>
+      <Dependent Role="MsFlower">
+        <PropertyRef Name="FlowerTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TrDetail__Flower__30F848ED">
+    <End Role="MsFlower" Type="Self.MsFlower" Multiplicity="1" />
+    <End Role="TrDetail" Type="Self.TrDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MsFlower">
+        <PropertyRef Name="FlowerID" />
+      </Principal>
+      <Dependent Role="TrDetail">
+        <PropertyRef Name="FlowerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TrHeader__Member__29572725">
+    <End Role="MsMember" Type="Self.MsMember" Multiplicity="1" />
+    <End Role="TrHeader" Type="Self.TrHeader" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MsMember">
+        <PropertyRef Name="MemberID" />
+      </Principal>
+      <Dependent Role="TrHeader">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TrDetail__Transa__300424B4">
+    <End Role="TrHeader" Type="Self.TrHeader" Multiplicity="1" />
+    <End Role="TrDetail" Type="Self.TrDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TrHeader">
+        <PropertyRef Name="TransactionID" />
+      </Principal>
+      <Dependent Role="TrDetail">
+        <PropertyRef Name="TransactionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="NeinteenFlowerDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MsEmployees" EntityType="Self.MsEmployee" />
+    <EntitySet Name="MsFlowers" EntityType="Self.MsFlower" />
+    <EntitySet Name="MsFlowerTypes" EntityType="Self.MsFlowerType" />
+    <EntitySet Name="MsMembers" EntityType="Self.MsMember" />
+    <EntitySet Name="TrDetails" EntityType="Self.TrDetail" />
+    <EntitySet Name="TrHeaders" EntityType="Self.TrHeader" />
+    <AssociationSet Name="FK__TrHeader__Employ__2A4B4B5E" Association="Self.FK__TrHeader__Employ__2A4B4B5E">
+      <End Role="MsEmployee" EntitySet="MsEmployees" />
+      <End Role="TrHeader" EntitySet="TrHeaders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MsFlower__Flower__2D27B809" Association="Self.FK__MsFlower__Flower__2D27B809">
+      <End Role="MsFlowerType" EntitySet="MsFlowerTypes" />
+      <End Role="MsFlower" EntitySet="MsFlowers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TrDetail__Flower__30F848ED" Association="Self.FK__TrDetail__Flower__30F848ED">
+      <End Role="MsFlower" EntitySet="MsFlowers" />
+      <End Role="TrDetail" EntitySet="TrDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TrHeader__Member__29572725" Association="Self.FK__TrHeader__Member__29572725">
+      <End Role="MsMember" EntitySet="MsMembers" />
+      <End Role="TrHeader" EntitySet="TrHeaders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TrDetail__Transa__300424B4" Association="Self.FK__TrDetail__Transa__300424B4">
+      <End Role="TrHeader" EntitySet="TrHeaders" />
+      <End Role="TrDetail" EntitySet="TrDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
