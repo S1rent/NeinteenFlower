@@ -21,7 +21,7 @@
             <asp:Button ID="ButtonLogin" runat="server" OnClick="ButtonLoginTapped" Text="Login" /><br /><br />
 
             <span><a href="Register.aspx">Register</a></span>
-            <span><a href="Login.aspx">Forgot Password</a></span>
+            <span><a href="ForgotPassword.aspx">Forgot Password</a></span>
         </div>
     </form>
 </body>
