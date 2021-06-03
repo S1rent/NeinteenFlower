@@ -76,5 +76,16 @@ namespace NeinteenFlower.Handler
                 }
             }
         }
+
+        public MsMember GetMember(string email)
+        {
+            List<MsMember> memberList = LoginRepository.shared.GetMemberByEmail(email);
+            return memberList[0];
+        }
+        public MsEmployee GetEmployee(string email)
+        {
+            List<MsEmployee> employeeList = LoginRepository.shared.GetEmployeeByEmail(email);
+            return employeeList[0];
+        }
     }
 }

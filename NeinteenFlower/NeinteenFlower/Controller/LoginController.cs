@@ -1,4 +1,5 @@
 ﻿using NeinteenFlower.Handler;
+using NeinteenFlower.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,6 +55,23 @@ namespace NeinteenFlower_FrontEnd.Controller
             else
             {
                 return "Error, Please try again later.";
+            }
+        }
+
+        public string GetUsername(string email)
+        {
+            bool isMember = handler.CheckMemberEmailExist(email);
+            bool isEmployee = handler.CheckEmployeeEmailExist(email);
+
+            if (isMember)
+            {
+                MsMember member = handler.GetMember(email);
+                return member.MemberName;
+            }
+            else
+            {
+                MsEmployee employee = handler.GetEmployee(email);
+                return employee.EmployeeName;
             }
         }
     }

@@ -15,6 +15,10 @@ namespace NeinteenFlower.View
         {
             if (!IsPostBack)
             {
+                if (Session["user_email"] != null)
+                {
+                    Response.Redirect("Home.aspx");
+                }
                 string captcha = controller.GenerateCaptcha();
                 LabelCaptcha.Text = "Captcha: " + captcha;
                 LabelCaptchaHelper.Text = captcha;

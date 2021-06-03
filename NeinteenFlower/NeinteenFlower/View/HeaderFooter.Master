@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HeaderFooter.master.cs" Inherits="NeinteenFlower.View.HeaderFooter" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="head" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            <asp:Button ID="ButtonRedirectHome" runat="server" Text="Home" OnClick="HomeClicked" />
+            <asp:Button ID="ButtonLogout" runat="server" Text="Logout" OnClick="LogoutClicked" />
+            <asp:Button ID="ButtonRedirectTransactionHistory" runat="server" Text="View Transaction History" OnClick="TransactionHistoryClicked"/>
+            <asp:Button ID="ButtonRedirectPreorder" runat="server" Text="Preorder" OnClick="PreorderClicked"/>
+            <asp:Button ID="ButtonRedirectManageFlower" runat="server" Text="Manage Flower" OnClick="ManageFlowerClicked" />
+            <asp:Button ID="ButtonRedirectManageMember" runat="server" Text="Manage Member" OnClick="ManageMemberClicked" />
+            <asp:Button ID="ButtonRedirectManageEmployee" runat="server" Text="Manage Employee" OnClick="ManageEmployeeClicked" /><br /><br />
+            <asp:Label ID="LabelGreeting" runat="server" Text="Welcome, "></asp:Label>
+        </header>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <footer>
+            NeinteenFlower
+            2301856125 - Philip Indra Prayitno
+        </footer>
+    </form>
+</body>
+</html>

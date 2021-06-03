@@ -13,7 +13,10 @@ namespace NeinteenFlower_FrontEnd.View
         LoginController controller = new LoginController();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["user_email"] != null)
+            {
+                Response.Redirect("Home.aspx");
+            }
         }
 
         protected void ButtonLoginTapped(object sender, EventArgs e)
@@ -26,6 +29,9 @@ namespace NeinteenFlower_FrontEnd.View
             if (response.Equals(""))
             {
                 LabelErrorMessage.Visible = false;
+                Session["user_email"] = email;
+                Session["user_name"] = controller.GetUsername(email);
+                Response.Redirect("Home.aspx");
             }
             else
             {

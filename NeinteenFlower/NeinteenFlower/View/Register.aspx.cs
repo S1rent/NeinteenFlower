@@ -13,7 +13,10 @@ namespace NeinteenFlower.View
         RegisterController controller = new RegisterController();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["user_email"] != null)
+            {
+                Response.Redirect("Home.aspx");
+            }
         }
 
         protected void ButtonRegisterTapped(object sender, EventArgs e)

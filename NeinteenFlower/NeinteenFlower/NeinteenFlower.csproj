@@ -90,16 +90,19 @@
       <LastGenOutput>NeinteenFlowerModel.cs</LastGenOutput>
     </Content>
     <Content Include="View\ForgotPassword.aspx" />
+    <Content Include="View\Home.aspx" />
     <Content Include="View\Login.aspx" />
     <Content Include="View\Register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\ForgotPasswordController.cs" />
+    <Compile Include="Controller\HeaderFooterController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\RegisterController.cs" />
     <Compile Include="Factory\MemberFactory.cs" />
     <Compile Include="Handler\ForgotPasswordHandler.cs" />
+    <Compile Include="Handler\HeaderFooterHandler.cs" />
     <Compile Include="Handler\LoginHandler.cs" />
     <Compile Include="Handler\RegisterHandler.cs" />
     <Compile Include="Model\MsEmployee.cs">
@@ -137,6 +140,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\ForgotPasswordRepository.cs" />
+    <Compile Include="Repository\HeaderFooterRepository.cs" />
     <Compile Include="Repository\LoginRepository.cs" />
     <Compile Include="Repository\RegisterRepository.cs" />
     <Compile Include="View\ForgotPassword.aspx.cs">
@@ -145,6 +149,20 @@
     </Compile>
     <Compile Include="View\ForgotPassword.aspx.designer.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\HeaderFooter.Master.cs">
+      <DependentUpon>HeaderFooter.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\HeaderFooter.Master.designer.cs">
+      <DependentUpon>HeaderFooter.Master</DependentUpon>
+    </Compile>
+    <Compile Include="View\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -170,6 +188,7 @@
       <DependentUpon>NeinteenFlowerModel.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
+    <Content Include="View\HeaderFooter.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
