@@ -62,6 +62,12 @@ namespace NeinteenFlower.View
             Session.Remove("user_name");
             Session.Remove("user_email");
 
+            String[] cookieList = Request.Cookies.AllKeys;
+            foreach(string cookie in cookieList)
+            {
+                Response.Cookies[cookie].Expires = DateTime.Now.AddDays(-1);
+            }
+
             Response.Redirect("Login.aspx");
         }
         protected void TransactionHistoryClicked(object sender, EventArgs e)

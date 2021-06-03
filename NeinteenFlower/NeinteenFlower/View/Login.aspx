@@ -15,7 +15,9 @@
             <asp:TextBox ID="TextBoxEmail" runat="server"></asp:TextBox><br />
 
             <asp:Label runat="server" Text="Password: "></asp:Label>
-            <asp:TextBox ID="TextBoxPassword" runat="server" TextMode="Password"></asp:TextBox><br /><br />
+            <asp:TextBox ID="TextBoxPassword" runat="server"></asp:TextBox><br />
+            
+            <asp:CheckBox ID="CheckBoxRememberMe" runat="server" Text="Remember me"/><br /><br />
 
             <asp:Label ID="LabelErrorMessage" runat="server" Text="" Visible="true"></asp:Label><br />
             <asp:Button ID="ButtonLogin" runat="server" OnClick="ButtonLoginTapped" Text="Login" /><br /><br />

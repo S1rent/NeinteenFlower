@@ -98,11 +98,13 @@
   <ItemGroup>
     <Compile Include="Controller\ForgotPasswordController.cs" />
     <Compile Include="Controller\HeaderFooterController.cs" />
+    <Compile Include="Controller\HomeController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\RegisterController.cs" />
     <Compile Include="Factory\MemberFactory.cs" />
     <Compile Include="Handler\ForgotPasswordHandler.cs" />
     <Compile Include="Handler\HeaderFooterHandler.cs" />
+    <Compile Include="Handler\HomeHandler.cs" />
     <Compile Include="Handler\LoginHandler.cs" />
     <Compile Include="Handler\RegisterHandler.cs" />
     <Compile Include="Model\MsEmployee.cs">
@@ -139,6 +141,7 @@
       <DependentUpon>NeinteenFlowerModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\FlowerRepository.cs" />
     <Compile Include="Repository\ForgotPasswordRepository.cs" />
     <Compile Include="Repository\HeaderFooterRepository.cs" />
     <Compile Include="Repository\LoginRepository.cs" />
@@ -196,7 +199,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Assets\" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
