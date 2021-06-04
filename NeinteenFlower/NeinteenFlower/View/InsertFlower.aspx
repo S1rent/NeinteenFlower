@@ -8,6 +8,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/View/ManageFlower.aspx">Back to Manage Flower</asp:HyperLink>
+        <br /> <br />
         <div>
             <asp:Label ID="Label1" runat="server" Text="Name: "></asp:Label>
             <asp:TextBox ID="nameTxt" runat="server"></asp:TextBox>
