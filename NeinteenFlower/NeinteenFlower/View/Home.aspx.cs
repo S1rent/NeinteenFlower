@@ -21,6 +21,11 @@ namespace NeinteenFlower.View
                 FlowerRepeater.DataSource = flowerList;
                 FlowerRepeater.DataBind();
 
+                if(Session["user_email"] == null || Session["user_name"] == null)
+                {
+                    Response.Redirect("Login.aspx");
+                }
+
                 var userEmail = Session["user_email"].ToString();
                 var userName = Session["user_name"].ToString();
 
