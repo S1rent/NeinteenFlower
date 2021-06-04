@@ -17,5 +17,28 @@ namespace NeinteenFlower.Repository
             List<MsFlower> flowerList = (from data in db.MsFlowers select data).ToList();
             return flowerList;
         }
+
+        public MsFlower getFlowerById(int id)
+        {
+            return (from x in db.MsFlowers 
+                    join y in db.MsFlowerTypes
+                    on x.FlowerTypeID equals y.FlowerTypeID
+                    where x.FlowerID == id select x).FirstOrDefault();
+        }
+
+        public void deleteFlowerById(int id)
+        {
+            MsFlower f = (from x in db.MsFlowers
+                          where x.FlowerID == id
+                          select x).FirstOrDefault();
+            db.MsFlowers.Remove(f);
+            db.SaveChanges();
+        }
+
+        public void insertFlower(MsFlower flower)
+        {
+            db.MsFlowers.Add(flower);
+            db.SaveChanges();
+        }
     }
 }

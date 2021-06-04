@@ -91,21 +91,31 @@
     </Content>
     <Content Include="View\ForgotPassword.aspx" />
     <Content Include="View\Home.aspx" />
+    <Content Include="View\InsertFlower.aspx" />
     <Content Include="View\Login.aspx" />
+    <Content Include="View\ManageFlower.aspx" />
+    <Content Include="View\PreOrder.aspx" />
     <Content Include="View\Register.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\DeleteFlowerController.cs" />
     <Compile Include="Controller\ForgotPasswordController.cs" />
     <Compile Include="Controller\HeaderFooterController.cs" />
     <Compile Include="Controller\HomeController.cs" />
+    <Compile Include="Controller\InsertFlowerController.cs" />
     <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\preOrderController.cs" />
     <Compile Include="Controller\RegisterController.cs" />
+    <Compile Include="Factory\FlowerFactory.cs" />
     <Compile Include="Factory\MemberFactory.cs" />
+    <Compile Include="Handler\DeleteFlowerHandler.cs" />
     <Compile Include="Handler\ForgotPasswordHandler.cs" />
     <Compile Include="Handler\HeaderFooterHandler.cs" />
     <Compile Include="Handler\HomeHandler.cs" />
+    <Compile Include="Handler\InsertFlowerHandler.cs" />
     <Compile Include="Handler\LoginHandler.cs" />
+    <Compile Include="Handler\preOrderHandler.cs" />
     <Compile Include="Handler\RegisterHandler.cs" />
     <Compile Include="Model\MsEmployee.cs">
       <DependentUpon>NeinteenFlowerModel.tt</DependentUpon>
@@ -167,12 +177,33 @@
     <Compile Include="View\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\InsertFlower.aspx.cs">
+      <DependentUpon>InsertFlower.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\InsertFlower.aspx.designer.cs">
+      <DependentUpon>InsertFlower.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="View\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManageFlower.aspx.cs">
+      <DependentUpon>ManageFlower.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ManageFlower.aspx.designer.cs">
+      <DependentUpon>ManageFlower.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\PreOrder.aspx.cs">
+      <DependentUpon>PreOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\PreOrder.aspx.designer.cs">
+      <DependentUpon>PreOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
