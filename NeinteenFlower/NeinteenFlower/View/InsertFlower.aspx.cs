@@ -34,7 +34,6 @@ namespace NeinteenFlower.View
             {
                 lblMsg.Text = msg;
             }
-
         }
     }
 }

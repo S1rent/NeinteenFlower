@@ -96,6 +96,7 @@
     <Content Include="View\ManageFlower.aspx" />
     <Content Include="View\PreOrder.aspx" />
     <Content Include="View\Register.aspx" />
+    <Content Include="View\UpdateFlower.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -107,6 +108,7 @@
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\preOrderController.cs" />
     <Compile Include="Controller\RegisterController.cs" />
+    <Compile Include="Controller\UpdateFlowerController.cs" />
     <Compile Include="Factory\FlowerFactory.cs" />
     <Compile Include="Factory\MemberFactory.cs" />
     <Compile Include="Handler\DeleteFlowerHandler.cs" />
@@ -117,6 +119,7 @@
     <Compile Include="Handler\LoginHandler.cs" />
     <Compile Include="Handler\preOrderHandler.cs" />
     <Compile Include="Handler\RegisterHandler.cs" />
+    <Compile Include="Handler\UpdateFlowerHandler.cs" />
     <Compile Include="Model\MsEmployee.cs">
       <DependentUpon>NeinteenFlowerModel.tt</DependentUpon>
     </Compile>
@@ -211,6 +214,13 @@
     </Compile>
     <Compile Include="View\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateFlower.aspx.cs">
+      <DependentUpon>UpdateFlower.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UpdateFlower.aspx.designer.cs">
+      <DependentUpon>UpdateFlower.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

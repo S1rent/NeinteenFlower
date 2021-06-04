@@ -40,5 +40,19 @@ namespace NeinteenFlower.Repository
             db.MsFlowers.Add(flower);
             db.SaveChanges();
         }
+
+        public void updateFlower(int id, string name, string image, string description, int flowerType, int price)
+        {
+            MsFlower f = (from x in db.MsFlowers
+                          where x.FlowerID == id
+                          select x).FirstOrDefault();
+            f.FlowerName = name;
+            f.FlowerDescription = description;
+            f.FlowerImage = image;
+            f.FlowerPrice = price;
+            f.FlowerTypeID = flowerType;
+
+            db.SaveChanges();
+        }
     }
 }
