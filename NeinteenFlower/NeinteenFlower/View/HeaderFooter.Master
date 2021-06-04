@@ -16,7 +16,6 @@
             <asp:Button ID="ButtonRedirectHome" runat="server" Text="Home" OnClick="HomeClicked" />
             <asp:Button ID="ButtonLogout" runat="server" Text="Logout" OnClick="LogoutClicked" />
             <asp:Button ID="ButtonRedirectTransactionHistory" runat="server" Text="View Transaction History" OnClick="TransactionHistoryClicked"/>
-            <asp:Button ID="ButtonRedirectPreorder" runat="server" Text="Preorder" OnClick="PreorderClicked"/>
             <asp:Button ID="ButtonRedirectManageFlower" runat="server" Text="Manage Flower" OnClick="ManageFlowerClicked" />
             <asp:Button ID="ButtonRedirectManageMember" runat="server" Text="Manage Member" OnClick="ManageMemberClicked" />
             <asp:Button ID="ButtonRedirectManageEmployee" runat="server" Text="Manage Employee" OnClick="ManageEmployeeClicked" /><br /><br />
@@ -29,6 +28,9 @@
         <footer>
             NeinteenFlower
             2301856125 - Philip Indra Prayitno
+            2301884463 - Shirley
+            2301889275 - Fernando Chai
+            2301903456 - Brandon
         </footer>
     </form>
 </body>

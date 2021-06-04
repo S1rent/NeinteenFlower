@@ -74,10 +74,6 @@ namespace NeinteenFlower.View
         {
             Response.Redirect("TransactionHistory.aspx");
         }
-        protected void PreorderClicked(object sender, EventArgs e)
-        {
-            Response.Redirect("PreOrder.aspx");
-        }
         protected void ManageFlowerClicked(object sender, EventArgs e)
         {
             Response.Redirect("ManageFlower.aspx");
@@ -101,14 +97,12 @@ namespace NeinteenFlower.View
         private void SetupEmployeeView()
         {
             ButtonRedirectTransactionHistory.Visible = false;
-            ButtonRedirectPreorder.Visible = false;
             ButtonRedirectManageMember.Visible = false;
             ButtonRedirectManageEmployee.Visible = false;
         }
         private void SetupAdministratorView()
         {
             ButtonRedirectTransactionHistory.Visible = false;
-            ButtonRedirectPreorder.Visible = false;
             ButtonRedirectManageFlower.Visible = false;
         }
     }

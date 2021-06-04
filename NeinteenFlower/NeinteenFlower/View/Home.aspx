@@ -6,40 +6,34 @@
     
     <asp:PlaceHolder ID="TablePlaceHolder" runat="server">
         <table style="width:900px" border="1" id="FlowerTable">
-          <tr>
-            <th>Flower Name</th>
-            <th>Flower Type</th>
-            <th>Flower Description</th>
-            <th>Flower Price</th>
-            <th>Flower Image</th>
-            <th>Action</th>
-          </tr>
-    
-        <% if (flowerList.Count == 0)
-           { %>
-           <tr><td colspan="6" style="text-align: center;">No Data.</td></tr>
-        <% } %>
-
-        <% foreach (var flower in flowerList)
-            { %>
             <tr>
-                <td><% Response.Write(flower.FlowerName); %></td>
-                <% if(flower.FlowerTypeID == 1) { %>
-                   <td>Daisies</td>
-                <% } %>
-                <% if(flower.FlowerTypeID == 2) { %>
-                   <td>Lilies</td>
-                <% } %>
-                <% if(flower.FlowerTypeID == 3) { %>
-                   <td>Roses</td>
-                <% } %>
-
-                <td><% Response.Write(flower.FlowerDescription); %></td>
-                <td><% Response.Write(flower.FlowerPrice.ToString()); %></td>
-                <td><image src="<% Response.Write(flower.FlowerImage); %>" style="width: 300px; height: 300px;"></image></td>
-                <td><asp:Button runat="server" Text="Pre Order" CommandArgument='3' CommandName="PreOrderFlowerClicked" OnClick="PreOrderFlowerClickHandler" /></td>
+                <th>Flower Name</th>
+                <th>Flower Type</th>
+                <th>Flower Description</th>
+                <th>Flower Price</th>
+                <th>Flower Image</th>
+                <th>Action</th>
             </tr>
-        <% } %>
+    
+            <% if (flowerList.Count == 0)
+               { %>
+               <tr><td colspan="6" style="text-align: center;">No Data.</td></tr>
+            <% } %>
+
+            <asp:Repeater ID="FlowerRepeater" runat="server">
+                <ItemTemplate>
+                    <tr>
+                        <td><%# Eval("FlowerName") %></td>
+                        <td><%# FormatFlowerTypeID(Eval("FlowerTypeID").ToString()) %></td>
+                        <td><%# Eval("FlowerDescription") %></td>
+                        <td><%# Eval("FlowerPrice") %></td>
+                        <td><image src='<%# Eval("FlowerImage") %>'' style="width: 300px; height: 300px;"></image></td>
+                        <td>
+                            <asp:Button runat="server" Text="Pre Order" CommandArgument='<%# Eval("FlowerID") %>' CommandName="PreOrderFlowerClicked" OnClick="PreOrderFlowerClickHandler" />
+                        </td>
+                    </tr>
+                </ItemTemplate>
+            </asp:Repeater>
         </table>
     </asp:PlaceHolder>
 </asp:Content>
