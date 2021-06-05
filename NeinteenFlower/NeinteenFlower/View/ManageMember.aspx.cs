@@ -33,13 +33,7 @@ namespace NeinteenFlower.View
 
             if (!response)
             {
-                Session.Remove("user_name");
-                Session.Remove("user_email");
-
-                Response.Cookies["user_email_cookie"].Expires = DateTime.Now.AddDays(-1);
-                Response.Cookies["user_password_cookie"].Expires = DateTime.Now.AddDays(-1);
-
-                Response.Redirect("Login.aspx");
+               Response.Redirect("Login.aspx");
             }
         }
 

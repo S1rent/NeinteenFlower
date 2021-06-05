@@ -35,7 +35,7 @@ namespace NeinteenFlower.Controller
             MsEmployee employee = poHandler.GetEmployeeData(email);
             if (employee != null)
             {
-                if (employee.EmployeeName.Equals("Administrator"))
+                if (employee.EmployeeEmail.Equals("admin@gmail.com"))
                 {
                     return 1;
                 }

@@ -18,6 +18,12 @@ namespace NeinteenFlower.Repository
             return memberList;
         }
 
+        public void InsertMember(MsMember member)
+        {
+            db.MsMembers.Add(member);
+            db.SaveChanges();
+        }
+
         public void DeleteMember(int id)
         {
             MsMember member = (from memberData in db.MsMembers

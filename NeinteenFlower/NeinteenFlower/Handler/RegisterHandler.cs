@@ -27,7 +27,7 @@ namespace NeinteenFlower.Handler
 
         public void InsertMember(MsMember member)
         {
-            RegisterRepository.shared.InsertMember(member);
+            MemberRepository.shared.InsertMember(member);
         }
     }
 }

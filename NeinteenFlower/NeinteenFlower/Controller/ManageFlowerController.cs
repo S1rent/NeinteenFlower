@@ -41,7 +41,7 @@ namespace NeinteenFlower.Controller
             MsEmployee employee = dfHandler.GetEmployeeData(email);
             if (employee != null)
             {
-                if (employee.EmployeeName.Equals("Administrator"))
+                if (employee.EmployeeEmail.Equals("admin@gmail.com@"))
                 {
                     return 1;
                 }

@@ -3,6 +3,7 @@
     NineteenFlower - Manage Member
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <a href="InsertMember.aspx">Insert Member</a>
     <asp:PlaceHolder ID="TablePlaceHolder" runat="server">
         <table style="width:900px" border="1" id="FlowerTable">
             <tr>

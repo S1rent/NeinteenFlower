@@ -25,7 +25,7 @@ namespace NeinteenFlower.Controller
             }
             else
             {
-                if(employeeList[0].EmployeeName.Equals("Administrator"))
+                if(employeeList[0].EmployeeEmail.Equals("admin@gmail.com"))
                 {
                     return true;
                 }
