@@ -33,7 +33,7 @@ namespace NeinteenFlower.Controller
             }
         }
 
-        public string Register(string email, string password, string name, string birthDate,
+        public string InsertMember(string email, string password, string name, string birthDate,
                                bool isMale, bool isFemale, string phoneNumber, string address)
         {
             bool isEmailExist = handler.CheckEmailExist(email);
@@ -75,7 +75,7 @@ namespace NeinteenFlower.Controller
                 return addressValidationResult;
             }
 
-            //Register
+            //Insert
             handler.InsertMember(
                 MemberFactory.shared.makeMember(
                     email, password, name, this.GenerateCorrectBirthdateFormat(birthDate),

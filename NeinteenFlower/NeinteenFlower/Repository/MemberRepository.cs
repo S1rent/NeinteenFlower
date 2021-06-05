@@ -35,5 +35,33 @@ namespace NeinteenFlower.Repository
                 db.SaveChanges();
             }
         }
+
+        public MsMember GetMemberByID(int id)
+        {
+            MsMember memberList = (from memberData in db.MsMembers
+                                         where memberData.MemberID == id
+                                         select memberData).FirstOrDefault();
+            return memberList;
+        }
+
+        public void UpdateMember(MsMember member)
+        {
+            MsMember dbMemberData = (from memberData in db.MsMembers
+                          where memberData.MemberID == member.MemberID
+                          select memberData).FirstOrDefault();
+
+            if(dbMemberData != null)
+            {
+                dbMemberData.MemberName = member.MemberName;
+                dbMemberData.MemberAddress = member.MemberAddress;
+                dbMemberData.MemberDOB = member.MemberDOB;
+                dbMemberData.MemberEmail = member.MemberEmail;
+                dbMemberData.MemberGender = member.MemberGender;
+                dbMemberData.MemberPassword = member.MemberPassword;
+                dbMemberData.MemberPhone = member.MemberPhone;
+
+                db.SaveChanges();
+            }
+        }
     }
 }

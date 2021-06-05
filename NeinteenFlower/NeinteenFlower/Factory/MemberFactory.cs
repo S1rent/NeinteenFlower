@@ -25,5 +25,21 @@ namespace NeinteenFlower.Factory
 
             return member;
         }
+
+        public MsMember makeMemberWithID(int id, string email, string password, string name, string birthDate,
+                                   string gender, string phoneNumber, string address)
+        {
+            MsMember member = new MsMember();
+
+            member.MemberName = name;
+            member.MemberDOB = birthDate;
+            member.MemberGender = gender;
+            member.MemberAddress = address;
+            member.MemberPhone = phoneNumber;
+            member.MemberEmail = email;
+            member.MemberPassword = password;
+
+            return member;
+        }
     }
 }

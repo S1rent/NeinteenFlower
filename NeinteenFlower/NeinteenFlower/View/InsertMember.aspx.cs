@@ -44,7 +44,7 @@ namespace NeinteenFlower.View
             bool isMale = RadioButtonMale.Checked,
                  isFemale = RadioButtonFemale.Checked;
 
-            string response = controller.Register(
+            string response = controller.InsertMember(
                 email, password, name, birthDate,
                 isMale, isFemale, phoneNumber, address
             );
@@ -54,8 +54,6 @@ namespace NeinteenFlower.View
                 LabelErrorMessage.ForeColor = System.Drawing.Color.Green;
                 LabelErrorMessage.Visible = true;
                 LabelErrorMessage.Text = "Successfully created account.";
-
-                Response.Redirect("ManageMember.aspx");
             }
             else
             {
