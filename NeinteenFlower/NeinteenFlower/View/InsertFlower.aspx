@@ -1,13 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="InsertFlower.aspx.cs" Inherits="NeinteenFlower.View.InsertFlower" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-      <title>NineteenFlower - Insert Flower</title>
-</head>
-<body>
-    <form id="form1" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/HeaderFooter.Master" AutoEventWireup="true" CodeBehind="InsertFlower.aspx.cs" Inherits="NeinteenFlower.View.InsertFlower" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    NineteenFlower - Insert Flower
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div>
             <asp:Label ID="Label1" runat="server" Text="Name: "></asp:Label>
             <asp:TextBox ID="nameTxt" runat="server"></asp:TextBox>
@@ -35,7 +30,4 @@
         <br /> <br />
         <asp:Button ID="btnInsert" runat="server" Text="Insert Flower" OnClick="btnInsert_Click" />
         <asp:Label ID="lblMsg" runat="server"></asp:Label>
-
-    </form>
-</body>
-</html>
+</asp:Content>

@@ -1,16 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PreOrder.aspx.cs" Inherits="NeinteenFlower.View.PreOrder" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>NineteenFlower - PreOrder</title>
-</head>
-<body>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/View/HeaderFooter.Master" AutoEventWireup="true" CodeBehind="PreOrder.aspx.cs" Inherits="NeinteenFlower.View.PreOrder" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    NineteenFlower - PreOrder
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>PreOrder</h1>
-    <form id="form1" runat="server">
-
-        <table style="width:900px" border="1" id="FlowerTable">
+    <table style="width:900px" border="1" id="FlowerTable">
             <tr>
                 <th>Flower Name</th>
                 <th>Flower Type</th>
@@ -35,6 +29,4 @@
         <div>
             <asp:Button ID="poBtn" runat="server" Text="PreOrder" OnClick="poBtn_Click"/>
         </div>
-    </form>
-</body>
-</html>
+</asp:Content>

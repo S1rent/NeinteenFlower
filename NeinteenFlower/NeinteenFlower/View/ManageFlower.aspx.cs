@@ -11,15 +11,13 @@ namespace NeinteenFlower.View
 {
     public partial class ManageFlower : System.Web.UI.Page
     {
-        HomeController controller = new HomeController();
-        HeaderFooterController hfcontroller = new HeaderFooterController();
-        DeleteFlowerController dfController = new DeleteFlowerController();
+        ManageFlowerController mfController = new ManageFlowerController();
         public List<MsFlower> flowerList = new List<MsFlower>();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                flowerList = controller.GetFlowerList();
+                flowerList = mfController.GetFlowerList();
                 FlowerRepeater.DataSource = flowerList;
                 FlowerRepeater.DataBind();
             }
@@ -31,7 +29,7 @@ namespace NeinteenFlower.View
 
             var userEmail = Session["user_email"].ToString();
 
-            int response = hfcontroller.CheckIfUserIsMember(userEmail);
+            int response = mfController.CheckIfUserIsMember(userEmail);
 
             if (response == -1)
             {
@@ -39,12 +37,12 @@ namespace NeinteenFlower.View
             }
             else if (response == 0)
             {
-                int isAdministrator = hfcontroller.CheckIfEmployeeIsAdministrator(userEmail);
+                int isAdministrator = mfController.CheckIfEmployeeIsAdministrator(userEmail);
                 if (isAdministrator == -1)
                 {
                     Response.Redirect("Login.aspx");
                 }
-               
+
                 else if (isAdministrator == 1)
                 {
                     Response.Redirect("Home.aspx");
@@ -73,7 +71,7 @@ namespace NeinteenFlower.View
             Button btn = (Button)sender;
 
             int id = int.Parse(btn.CommandArgument.ToString());
-            dfController.deleteFlowerById(id);
+            mfController.deleteFlowerById(id);
             lblDel.Visible = true;
             Response.Redirect("./ManageFlower.aspx");
         }
