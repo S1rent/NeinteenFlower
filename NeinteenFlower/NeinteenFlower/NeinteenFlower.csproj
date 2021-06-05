@@ -103,32 +103,32 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\InsertMemberController.cs" />
-    <Compile Include="Controller\ManageFlowerController.cs" />
-    <Compile Include="Controller\ForgotPasswordController.cs" />
+    <Compile Include="Controller\Administrator\InsertMemberController.cs" />
+    <Compile Include="Controller\Employee\ManageFlowerController.cs" />
+    <Compile Include="Controller\Guest\ForgotPasswordController.cs" />
     <Compile Include="Controller\HeaderFooterController.cs" />
     <Compile Include="Controller\HomeController.cs" />
-    <Compile Include="Controller\InsertFlowerController.cs" />
-    <Compile Include="Controller\LoginController.cs" />
-    <Compile Include="Controller\ManageMemberController.cs" />
-    <Compile Include="Controller\PreOrderController.cs" />
-    <Compile Include="Controller\RegisterController.cs" />
-    <Compile Include="Controller\UpdateFlowerController.cs" />
-    <Compile Include="Controller\UpdateMemberController.cs" />
+    <Compile Include="Controller\Employee\InsertFlowerController.cs" />
+    <Compile Include="Controller\Guest\LoginController.cs" />
+    <Compile Include="Controller\Administrator\ManageMemberController.cs" />
+    <Compile Include="Controller\Member\PreOrderController.cs" />
+    <Compile Include="Controller\Guest\RegisterController.cs" />
+    <Compile Include="Controller\Employee\UpdateFlowerController.cs" />
+    <Compile Include="Controller\Administrator\UpdateMemberController.cs" />
     <Compile Include="Factory\FlowerFactory.cs" />
     <Compile Include="Factory\MemberFactory.cs" />
-    <Compile Include="Handler\InsertMemberHandler.cs" />
-    <Compile Include="Handler\ManageFlowerHandler.cs" />
-    <Compile Include="Handler\ForgotPasswordHandler.cs" />
+    <Compile Include="Handler\Administrator\InsertMemberHandler.cs" />
+    <Compile Include="Handler\Employee\ManageFlowerHandler.cs" />
+    <Compile Include="Handler\Guest\ForgotPasswordHandler.cs" />
     <Compile Include="Handler\HeaderFooterHandler.cs" />
     <Compile Include="Handler\HomeHandler.cs" />
-    <Compile Include="Handler\InsertFlowerHandler.cs" />
-    <Compile Include="Handler\LoginHandler.cs" />
-    <Compile Include="Handler\ManageMemberHandler.cs" />
-    <Compile Include="Handler\PreOrderHandler.cs" />
-    <Compile Include="Handler\RegisterHandler.cs" />
-    <Compile Include="Handler\UpdateFlowerHandler.cs" />
-    <Compile Include="Handler\UpdateMemberHandler.cs" />
+    <Compile Include="Handler\Employee\InsertFlowerHandler.cs" />
+    <Compile Include="Handler\Guest\LoginHandler.cs" />
+    <Compile Include="Handler\Administrator\ManageMemberHandler.cs" />
+    <Compile Include="Handler\Member\PreOrderHandler.cs" />
+    <Compile Include="Handler\Guest\RegisterHandler.cs" />
+    <Compile Include="Handler\Employee\UpdateFlowerHandler.cs" />
+    <Compile Include="Handler\Administrator\UpdateMemberHandler.cs" />
     <Compile Include="Model\MsEmployee.cs">
       <DependentUpon>NeinteenFlowerModel.tt</DependentUpon>
     </Compile>
