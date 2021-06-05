@@ -94,6 +94,7 @@
     <Content Include="View\InsertFlower.aspx" />
     <Content Include="View\Login.aspx" />
     <Content Include="View\ManageFlower.aspx" />
+    <Content Include="View\ManageMember.aspx" />
     <Content Include="View\PreOrder.aspx" />
     <Content Include="View\Register.aspx" />
     <Content Include="View\UpdateFlower.aspx" />
@@ -106,6 +107,7 @@
     <Compile Include="Controller\HomeController.cs" />
     <Compile Include="Controller\InsertFlowerController.cs" />
     <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\ManageMemberController.cs" />
     <Compile Include="Controller\PreOrderController.cs" />
     <Compile Include="Controller\RegisterController.cs" />
     <Compile Include="Controller\UpdateFlowerController.cs" />
@@ -117,6 +119,7 @@
     <Compile Include="Handler\HomeHandler.cs" />
     <Compile Include="Handler\InsertFlowerHandler.cs" />
     <Compile Include="Handler\LoginHandler.cs" />
+    <Compile Include="Handler\ManageMemberHandler.cs" />
     <Compile Include="Handler\PreOrderHandler.cs" />
     <Compile Include="Handler\RegisterHandler.cs" />
     <Compile Include="Handler\UpdateFlowerHandler.cs" />
@@ -158,6 +161,7 @@
     <Compile Include="Repository\ForgotPasswordRepository.cs" />
     <Compile Include="Repository\HeaderFooterRepository.cs" />
     <Compile Include="Repository\LoginRepository.cs" />
+    <Compile Include="Repository\MemberRepository.cs" />
     <Compile Include="Repository\RegisterRepository.cs" />
     <Compile Include="View\ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
@@ -200,6 +204,13 @@
     </Compile>
     <Compile Include="View\ManageFlower.aspx.designer.cs">
       <DependentUpon>ManageFlower.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManageMember.aspx.cs">
+      <DependentUpon>ManageMember.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ManageMember.aspx.designer.cs">
+      <DependentUpon>ManageMember.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\PreOrder.aspx.cs">
       <DependentUpon>PreOrder.aspx</DependentUpon>
