@@ -6,11 +6,12 @@ using System.Web;
 
 namespace NeinteenFlower.Repository
 {
-    public class LoginRepository
+    public class EmployeeRepository
     {
-        public static LoginRepository shared = new LoginRepository();
         NeinteenFlowerDBEntities db = new NeinteenFlowerDBEntities();
-        private LoginRepository() { }
+        public static EmployeeRepository shared = new EmployeeRepository();
+        private EmployeeRepository() { }
+
         public List<MsEmployee> GetEmployeeByEmail(string email)
         {
             List<MsEmployee> employeeList = (
@@ -20,17 +21,6 @@ namespace NeinteenFlower.Repository
             ).ToList();
 
             return employeeList;
-        }
-
-        public List<MsMember> GetMemberByEmail(string email)
-        {
-            List<MsMember> memberList = (
-                from memberData in db.MsMembers
-                where memberData.MemberEmail.Equals(email)
-                select memberData
-            ).ToList();
-
-            return memberList;
         }
     }
 }

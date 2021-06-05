@@ -16,13 +16,13 @@ namespace NeinteenFlower.Handler
 
         public bool CheckEmailExist(string email)
         {
-            List<MsEmployee> employeeList = LoginRepository.shared.GetEmployeeByEmail(email);
+            List<MsEmployee> employeeList = EmployeeRepository.shared.GetEmployeeByEmail(email);
             if (employeeList.Count != 0)
             {
                 return true;
             }
 
-            List<MsMember> memberList = LoginRepository.shared.GetMemberByEmail(email);
+            List<MsMember> memberList = MemberRepository.shared.GetMemberByEmail(email);
             if (memberList.Count == 0)
             {
                 return false;

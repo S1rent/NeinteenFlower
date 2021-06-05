@@ -16,7 +16,7 @@ namespace NeinteenFlower.Handler
 
         public List<MsEmployee> GetEmployeeListByEmail(string email)
         {
-            return LoginRepository.shared.GetEmployeeByEmail(email);
+            return EmployeeRepository.shared.GetEmployeeByEmail(email);
         }
 
         public void DeleteMember(int id)

@@ -11,7 +11,7 @@ namespace NeinteenFlower.Handler
     {
         public bool CheckMemberEmailExist(string email)
         {
-            List<MsMember> memberList = LoginRepository.shared.GetMemberByEmail(email);
+            List<MsMember> memberList = MemberRepository.shared.GetMemberByEmail(email);
             if (memberList.Count == 0)
             {
                 return false;
@@ -20,7 +20,7 @@ namespace NeinteenFlower.Handler
         }
         public bool CheckEmployeeEmailExist(string email)
         {
-            List<MsEmployee> employeeList = LoginRepository.shared.GetEmployeeByEmail(email);
+            List<MsEmployee> employeeList = EmployeeRepository.shared.GetEmployeeByEmail(email);
             if (employeeList.Count == 0)
             {
                 return false;

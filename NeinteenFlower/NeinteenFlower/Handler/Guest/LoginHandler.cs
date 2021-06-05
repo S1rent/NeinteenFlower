@@ -11,7 +11,7 @@ namespace NeinteenFlower.Handler
     {
         public bool CheckMemberEmailExist(string email)
         {
-            if (LoginRepository.shared.GetMemberByEmail(email).Count != 0)
+            if (MemberRepository.shared.GetMemberByEmail(email).Count != 0)
             {
                 return true;
             }
@@ -23,7 +23,7 @@ namespace NeinteenFlower.Handler
 
         public bool CheckEmployeeEmailExist(string email)
         {
-            if (LoginRepository.shared.GetEmployeeByEmail(email).Count != 0)
+            if (EmployeeRepository.shared.GetEmployeeByEmail(email).Count != 0)
             {
                 return true;
             }
@@ -37,7 +37,7 @@ namespace NeinteenFlower.Handler
         {
             if (isEmployee)
             {
-                List<MsEmployee> employeeList = LoginRepository.shared.GetEmployeeByEmail(email);
+                List<MsEmployee> employeeList = EmployeeRepository.shared.GetEmployeeByEmail(email);
 
                 if (employeeList.Count == 0)
                 {
@@ -57,7 +57,7 @@ namespace NeinteenFlower.Handler
             }
             else
             {
-                List<MsMember> memberList = LoginRepository.shared.GetMemberByEmail(email);
+                List<MsMember> memberList = MemberRepository.shared.GetMemberByEmail(email);
 
                 if (memberList.Count == 0)
                 {
@@ -79,12 +79,12 @@ namespace NeinteenFlower.Handler
 
         public MsMember GetMember(string email)
         {
-            List<MsMember> memberList = LoginRepository.shared.GetMemberByEmail(email);
+            List<MsMember> memberList = MemberRepository.shared.GetMemberByEmail(email);
             return memberList[0];
         }
         public MsEmployee GetEmployee(string email)
         {
-            List<MsEmployee> employeeList = LoginRepository.shared.GetEmployeeByEmail(email);
+            List<MsEmployee> employeeList = EmployeeRepository.shared.GetEmployeeByEmail(email);
             return employeeList[0];
         }
     }
