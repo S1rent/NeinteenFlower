@@ -13,6 +13,10 @@ namespace NeinteenFlower.View
         InsertFlowerController ifc = new InsertFlowerController();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["user_email"] == null || Session["user_name"] == null) { 
+                Response.Redirect("Login.aspx");
+            }
+            var userEmail = Session["user_email"].ToString();
 
             int response = ifc.CheckIfUserIsMember(userEmail);
 
