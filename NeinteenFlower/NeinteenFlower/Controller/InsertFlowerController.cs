@@ -1,4 +1,5 @@
 ﻿using NeinteenFlower.Handler;
+using NeinteenFlower.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ namespace NeinteenFlower.Controller
 {
     public class InsertFlowerController
     {
+        InsertFlowerHandler ifh = new InsertFlowerHandler();
         public string InsertFlower(string name, HttpPostedFile image, string description, String flowerType, String price)
         {
             int pricee = 0;
@@ -71,14 +73,47 @@ namespace NeinteenFlower.Controller
                 pricee = int.Parse(price);
                 if (pricee < 20 || pricee > 100)
                 {
-                    return "between 20 and 100 inclusively";
+                    return "Price must be between 20 and 100 inclusively";
                 }
             }
 
-            InsertFlowerHandler ifh = new InsertFlowerHandler();
+           
 
             ifh.insertFlower(name, fileLoc, description, flowerTypeId, pricee);
             return "";
+        }
+        public int CheckIfUserIsMember(string email)
+        {
+            bool isMember = ifh.CheckMemberEmailExist(email);
+            bool isEmployee = ifh.CheckEmployeeEmailExist(email);
+
+            if (isMember)
+            {
+                return 1;
+            }
+            else if (isEmployee)
+            {
+                return 0;
+            }
+
+            return -1;
+        }
+        public int CheckIfEmployeeIsAdministrator(string email)
+        {
+            MsEmployee employee = ifh.GetEmployeeData(email);
+            if (employee != null)
+            {
+                if (employee.EmployeeName.Equals("Administrator"))
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+
+            return -1;
         }
     }
 }

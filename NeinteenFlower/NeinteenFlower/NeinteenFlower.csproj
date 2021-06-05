@@ -99,23 +99,23 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\DeleteFlowerController.cs" />
+    <Compile Include="Controller\ManageFlowerController.cs" />
     <Compile Include="Controller\ForgotPasswordController.cs" />
     <Compile Include="Controller\HeaderFooterController.cs" />
     <Compile Include="Controller\HomeController.cs" />
     <Compile Include="Controller\InsertFlowerController.cs" />
     <Compile Include="Controller\LoginController.cs" />
-    <Compile Include="Controller\preOrderController.cs" />
+    <Compile Include="Controller\PreOrderController.cs" />
     <Compile Include="Controller\RegisterController.cs" />
     <Compile Include="Factory\FlowerFactory.cs" />
     <Compile Include="Factory\MemberFactory.cs" />
-    <Compile Include="Handler\DeleteFlowerHandler.cs" />
+    <Compile Include="Handler\ManageFlowerHandler.cs" />
     <Compile Include="Handler\ForgotPasswordHandler.cs" />
     <Compile Include="Handler\HeaderFooterHandler.cs" />
     <Compile Include="Handler\HomeHandler.cs" />
     <Compile Include="Handler\InsertFlowerHandler.cs" />
     <Compile Include="Handler\LoginHandler.cs" />
-    <Compile Include="Handler\preOrderHandler.cs" />
+    <Compile Include="Handler\PreOrderHandler.cs" />
     <Compile Include="Handler\RegisterHandler.cs" />
     <Compile Include="Model\MsEmployee.cs">
       <DependentUpon>NeinteenFlowerModel.tt</DependentUpon>

@@ -7,17 +7,23 @@ using System.Web;
 
 namespace NeinteenFlower.Controller
 {
-    public class PreOrderController
+    public class ManageFlowerController
     {
-        PreOrderHandler poHandler = new PreOrderHandler();
-        public MsFlower getFlowerById(int id)
+        ManageFlowerHandler dfHandler = new ManageFlowerHandler();
+        public void deleteFlowerById(int id)
         {
-            return poHandler.getFlowerById(id);
+            dfHandler.deleteFlowerById(id);
         }
+
+        public List<MsFlower> GetFlowerList()
+        {
+            return dfHandler.GetFlowerList();
+        }
+
         public int CheckIfUserIsMember(string email)
         {
-            bool isMember = poHandler.CheckMemberEmailExist(email);
-            bool isEmployee = poHandler.CheckEmployeeEmailExist(email);
+            bool isMember = dfHandler.CheckMemberEmailExist(email);
+            bool isEmployee = dfHandler.CheckEmployeeEmailExist(email);
 
             if (isMember)
             {
@@ -32,7 +38,7 @@ namespace NeinteenFlower.Controller
         }
         public int CheckIfEmployeeIsAdministrator(string email)
         {
-            MsEmployee employee = poHandler.GetEmployeeData(email);
+            MsEmployee employee = dfHandler.GetEmployeeData(email);
             if (employee != null)
             {
                 if (employee.EmployeeName.Equals("Administrator"))
