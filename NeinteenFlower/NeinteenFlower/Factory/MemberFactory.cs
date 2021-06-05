@@ -31,6 +31,7 @@ namespace NeinteenFlower.Factory
         {
             MsMember member = new MsMember();
 
+            member.MemberID = id;
             member.MemberName = name;
             member.MemberDOB = birthDate;
             member.MemberGender = gender;

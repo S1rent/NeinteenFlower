@@ -27,6 +27,7 @@ namespace NeinteenFlower_FrontEnd.View
                 {
                     TextBoxEmail.Text = userEmailCookie.Value;
                     TextBoxPassword.Text = userPasswordCookie.Value;
+                    CheckBoxRememberMe.Checked = true;
                 }
             }
         }
