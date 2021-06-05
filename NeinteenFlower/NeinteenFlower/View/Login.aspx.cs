@@ -41,6 +41,7 @@ namespace NeinteenFlower_FrontEnd.View
             if (response.Equals(""))
             {
                 LabelErrorMessage.Visible = false;
+                this.ClearCookieAndSession();
                 this.SetupSession(email);
 
                 if(isRememberMeChecked)
@@ -61,6 +62,15 @@ namespace NeinteenFlower_FrontEnd.View
         {
             Session["user_email"] = email;
             Session["user_name"] = controller.GetUsername(email);
+        }
+
+        private void ClearCookieAndSession()
+        {
+            Session.Remove("user_name");
+            Session.Remove("user_email");
+
+            Response.Cookies["user_email_cookie"].Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies["user_password_cookie"].Expires = DateTime.Now.AddDays(-1);
         }
 
         private void SetupCookie(string email, string password)
