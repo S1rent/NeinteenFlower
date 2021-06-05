@@ -13,18 +13,21 @@ namespace NeinteenFlower_FrontEnd.View
         LoginController controller = new LoginController();
         protected void Page_Load(object sender, EventArgs e)
         {
-            TextBoxPassword.Attributes["type"] = "password";
-            if (Session["user_email"] != null)
+            if(!IsPostBack)
             {
-                Response.Redirect("Home.aspx");
-            }
+                TextBoxPassword.Attributes["type"] = "password";
+                if (Session["user_email"] != null)
+                {
+                    Response.Redirect("Home.aspx");
+                }
 
-            var userEmailCookie = Request.Cookies["user_email_cookie"];
-            var userPasswordCookie = Request.Cookies["user_password_cookie"];
-            if (userEmailCookie != null && userPasswordCookie != null)
-            {
-                TextBoxEmail.Text = userEmailCookie.Value;
-                TextBoxPassword.Text = userPasswordCookie.Value;
+                var userEmailCookie = Request.Cookies["user_email_cookie"];
+                var userPasswordCookie = Request.Cookies["user_password_cookie"];
+                if (userEmailCookie != null && userPasswordCookie != null)
+                {
+                    TextBoxEmail.Text = userEmailCookie.Value;
+                    TextBoxPassword.Text = userPasswordCookie.Value;
+                }
             }
         }
 
