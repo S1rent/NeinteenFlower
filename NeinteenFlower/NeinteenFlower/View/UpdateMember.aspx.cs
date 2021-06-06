@@ -46,6 +46,7 @@ namespace NeinteenFlower.View
                     if(convertedID != -1)
                     {
                         MsMember memberData = controller.GetMemberByID(convertedID);
+                        if (memberData == null) { Response.Redirect("ManageMember.aspx"); }
                         TextBoxName.Text = memberData.MemberName;
                         TextBoxEmail.Text = memberData.MemberEmail;
                         TextBoxPassword.Text = memberData.MemberPassword;
@@ -60,6 +61,10 @@ namespace NeinteenFlower.View
                             RadioButtonFemale.Checked = true;
                         }
                         TextBoxCalendar.Text = this.ConvertMemberDOB(memberData.MemberDOB);
+                    }
+                    else
+                    {
+                        Response.Redirect("ManageMember.aspx");
                     }
                 }
             }

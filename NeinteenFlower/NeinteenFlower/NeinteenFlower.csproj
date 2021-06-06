@@ -108,6 +108,7 @@
   <ItemGroup>
     <Compile Include="Controller\Administrator\InsertEmployeeController.cs" />
     <Compile Include="Controller\Administrator\InsertMemberController.cs" />
+    <Compile Include="Controller\Administrator\UpdateEmployeeController.cs" />
     <Compile Include="Controller\Employee\ManageFlowerController.cs" />
     <Compile Include="Controller\Guest\ForgotPasswordController.cs" />
     <Compile Include="Controller\HeaderFooterController.cs" />
@@ -126,6 +127,7 @@
     <Compile Include="Handler\Administrator\InsertMemberHandler.cs" />
     <Compile Include="Controller\Administrator\ManageEmployeeController.cs" />
     <Compile Include="Handler\Administrator\ManageEmployeeHandler.cs" />
+    <Compile Include="Handler\Administrator\UpdateEmployeeHandler.cs" />
     <Compile Include="Handler\Employee\ManageFlowerHandler.cs" />
     <Compile Include="Handler\Employee\MsEmplyee.cs" />
     <Compile Include="Handler\Guest\ForgotPasswordHandler.cs" />

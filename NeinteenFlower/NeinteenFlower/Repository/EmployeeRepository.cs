@@ -49,5 +49,34 @@ namespace NeinteenFlower.Repository
             db.MsEmployees.Remove(employee);
             db.SaveChanges();
         }
+
+        public MsEmployee GetEmployeeByID(int id)
+        {
+            MsEmployee employee = (from employeeData in db.MsEmployees
+                                   where employeeData.EmployeeID == id
+                                   select employeeData).FirstOrDefault();
+            return employee;
+        }
+
+        public void UpdateEmployee(MsEmployee employee)
+        {
+            MsEmployee dbEmployeeData = (from employeeData in db.MsEmployees
+                                         where employeeData.EmployeeID == employee.EmployeeID
+                                        select employeeData).FirstOrDefault();
+
+            if (dbEmployeeData != null)
+            {
+                dbEmployeeData.EmployeeName = employee.EmployeeName;
+                dbEmployeeData.EmployeeAddress = employee.EmployeeAddress;
+                dbEmployeeData.EmployeeDOB = employee.EmployeeDOB;
+                dbEmployeeData.EmployeeEmail = employee.EmployeeEmail;
+                dbEmployeeData.EmployeeGender = employee.EmployeeGender;
+                dbEmployeeData.EmployeePassword = employee.EmployeePassword;
+                dbEmployeeData.EmployeePhone = employee.EmployeePhone;
+                dbEmployeeData.EmployeeSalary = employee.EmployeeSalary;
+
+                db.SaveChanges();
+            }
+        }
     }
 }
