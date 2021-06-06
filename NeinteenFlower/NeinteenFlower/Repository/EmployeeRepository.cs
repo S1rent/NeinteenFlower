@@ -32,6 +32,12 @@ namespace NeinteenFlower.Repository
             return employeeList;
         }
 
+        public void InsertEmployee(MsEmployee employee)
+        {
+            db.MsEmployees.Add(employee);
+            db.SaveChanges();
+        }
+
         public void DeleteEmployee(int id)
         {
             MsEmployee employee = (

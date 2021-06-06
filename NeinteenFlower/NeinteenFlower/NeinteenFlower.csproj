@@ -91,6 +91,7 @@
     </Content>
     <Content Include="View\ForgotPassword.aspx" />
     <Content Include="View\Home.aspx" />
+    <Content Include="View\InsertEmployee.aspx" />
     <Content Include="View\InsertFlower.aspx" />
     <Content Include="View\InsertMember.aspx" />
     <Content Include="View\Login.aspx" />
@@ -99,11 +100,13 @@
     <Content Include="View\ManageMember.aspx" />
     <Content Include="View\PreOrder.aspx" />
     <Content Include="View\Register.aspx" />
+    <Content Include="View\UpdateEmployee.aspx" />
     <Content Include="View\UpdateFlower.aspx" />
     <Content Include="View\UpdateMember.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\Administrator\InsertEmployeeController.cs" />
     <Compile Include="Controller\Administrator\InsertMemberController.cs" />
     <Compile Include="Controller\Employee\ManageFlowerController.cs" />
     <Compile Include="Controller\Guest\ForgotPasswordController.cs" />
@@ -116,8 +119,10 @@
     <Compile Include="Controller\Guest\RegisterController.cs" />
     <Compile Include="Controller\Employee\UpdateFlowerController.cs" />
     <Compile Include="Controller\Administrator\UpdateMemberController.cs" />
+    <Compile Include="Factory\EmployeeFactory.cs" />
     <Compile Include="Factory\FlowerFactory.cs" />
     <Compile Include="Factory\MemberFactory.cs" />
+    <Compile Include="Handler\Administrator\InsertEmployeeHandler.cs" />
     <Compile Include="Handler\Administrator\InsertMemberHandler.cs" />
     <Compile Include="Controller\Administrator\ManageEmployeeController.cs" />
     <Compile Include="Handler\Administrator\ManageEmployeeHandler.cs" />
@@ -193,6 +198,13 @@
     <Compile Include="View\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="View\InsertEmployee.aspx.cs">
+      <DependentUpon>InsertEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\InsertEmployee.aspx.designer.cs">
+      <DependentUpon>InsertEmployee.aspx</DependentUpon>
+    </Compile>
     <Compile Include="View\InsertFlower.aspx.cs">
       <DependentUpon>InsertFlower.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -248,6 +260,13 @@
     </Compile>
     <Compile Include="View\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\UpdateEmployee.aspx.cs">
+      <DependentUpon>UpdateEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\UpdateEmployee.aspx.designer.cs">
+      <DependentUpon>UpdateEmployee.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\UpdateFlower.aspx.cs">
       <DependentUpon>UpdateFlower.aspx</DependentUpon>
