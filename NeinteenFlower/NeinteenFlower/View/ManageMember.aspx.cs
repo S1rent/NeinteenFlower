@@ -33,7 +33,7 @@ namespace NeinteenFlower.View
 
             if (!response)
             {
-               Response.Redirect("Login.aspx");
+               Response.Redirect("Homne.aspx");
             }
         }
 
@@ -71,19 +71,6 @@ namespace NeinteenFlower.View
                     }
                     break;
             }
-        }
-
-        public string FormatFlowerTypeID(string id)
-        {
-            if (id.Equals("1"))
-            {
-                return "Daisies";
-            }
-            else if (id.Equals("2"))
-            {
-                return "Lilies";
-            }
-            return "Roses";
         }
     }
 }

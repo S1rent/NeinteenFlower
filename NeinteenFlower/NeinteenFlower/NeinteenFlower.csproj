@@ -94,6 +94,7 @@
     <Content Include="View\InsertFlower.aspx" />
     <Content Include="View\InsertMember.aspx" />
     <Content Include="View\Login.aspx" />
+    <Content Include="View\ManageEmployee.aspx" />
     <Content Include="View\ManageFlower.aspx" />
     <Content Include="View\ManageMember.aspx" />
     <Content Include="View\PreOrder.aspx" />
@@ -118,7 +119,10 @@
     <Compile Include="Factory\FlowerFactory.cs" />
     <Compile Include="Factory\MemberFactory.cs" />
     <Compile Include="Handler\Administrator\InsertMemberHandler.cs" />
+    <Compile Include="Controller\Administrator\ManageEmployeeController.cs" />
+    <Compile Include="Handler\Administrator\ManageEmployeeHandler.cs" />
     <Compile Include="Handler\Employee\ManageFlowerHandler.cs" />
+    <Compile Include="Handler\Employee\MsEmplyee.cs" />
     <Compile Include="Handler\Guest\ForgotPasswordHandler.cs" />
     <Compile Include="Handler\HeaderFooterHandler.cs" />
     <Compile Include="Handler\HomeHandler.cs" />
@@ -209,6 +213,13 @@
     </Compile>
     <Compile Include="View\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="View\ManageEmployee.aspx.cs">
+      <DependentUpon>ManageEmployee.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="View\ManageEmployee.aspx.designer.cs">
+      <DependentUpon>ManageEmployee.aspx</DependentUpon>
     </Compile>
     <Compile Include="View\ManageFlower.aspx.cs">
       <DependentUpon>ManageFlower.aspx</DependentUpon>

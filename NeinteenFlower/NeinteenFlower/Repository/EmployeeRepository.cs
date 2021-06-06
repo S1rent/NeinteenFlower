@@ -22,5 +22,26 @@ namespace NeinteenFlower.Repository
 
             return employeeList;
         }
+
+        public List<MsEmployee> GetEmployeeList()
+        {
+            List<MsEmployee> employeeList = (
+                from employeeData in db.MsEmployees
+                select employeeData
+            ).ToList();
+            return employeeList;
+        }
+
+        public void DeleteEmployee(int id)
+        {
+            MsEmployee employee = (
+                from employeeData in db.MsEmployees
+                where employeeData.EmployeeID == id
+                select employeeData
+            ).FirstOrDefault();
+
+            db.MsEmployees.Remove(employee);
+            db.SaveChanges();
+        }
     }
 }
