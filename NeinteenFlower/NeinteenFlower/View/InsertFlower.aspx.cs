@@ -43,22 +43,22 @@ namespace NeinteenFlower.View
             }
 
         }
-        protected void btnInsert_Click(object sender, EventArgs e)
+        protected void BtnInsert_Click(object sender, EventArgs e)
         {
-            string name = nameTxt.Text;
-            string desc = descTxt.Text;
-            string type = typeTxt.Text;
-            string price = priceTxt.Text;
+            string name = NameTxt.Text;
+            string desc = DescTxt.Text;
+            string type = TypeTxt.Text;
+            string price = PriceTxt.Text;
             var file = FileUpload1.PostedFile;
             string msg = ifc.InsertFlower(name, file, desc, type, price);
 
             if (msg == "")
             {
-                lblMsg.Text = "Insert Flower Success";
+                LblMsg.Text = "Insert Flower Success";
             }
             else
             {
-                lblMsg.Text = msg;
+                LblMsg.Text = msg;
             }
         }
     }

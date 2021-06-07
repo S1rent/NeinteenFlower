@@ -66,20 +66,21 @@ namespace NeinteenFlower.View
             return "Roses";
         }
 
-        protected void btnDel_Click(object sender, EventArgs e)
+        protected void BtnDel_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
 
             int id = int.Parse(btn.CommandArgument.ToString());
-            mfController.deleteFlowerById(id);
+            mfController.DeleteFlowerById(id);
             lblDel.Visible = true;
             Response.Redirect("./ManageFlower.aspx");
         }
 
-        protected void btnUp_Click(object sender, EventArgs e)
+        protected void BtnUp_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             Response.Redirect("./UpdateFlower.aspx?id=" + btn.CommandArgument.ToString());
         }
+
     }
 }

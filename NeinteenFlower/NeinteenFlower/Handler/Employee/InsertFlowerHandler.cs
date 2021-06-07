@@ -10,12 +10,12 @@ namespace NeinteenFlower.Handler
 {
     public class InsertFlowerHandler
     {
-        public void insertFlower(string name, string image, string description, int flowerType, int price)
+        public void InsertFlower(string name, string image, string description, int flowerType, int price)
         {
             FlowerFactory ff = new FlowerFactory();
 
             MsFlower mf = ff.createFlower(name, image, description, flowerType, price);
-            FlowerRepository.shared.insertFlower(mf);
+            FlowerRepository.shared.InsertFlower(mf);
         }
         public bool CheckMemberEmailExist(string email)
         {

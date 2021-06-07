@@ -47,14 +47,31 @@ namespace NeinteenFlower.View
 
             if (!IsPostBack)
             {
-                int id = int.Parse(Request.QueryString["id"]);
-                MsFlower n = poController.getFlowerById(id);
+                string id = Request.QueryString["id"].ToString();
+                int convertedID = -1;
+                try
+                {
+                    convertedID = Int16.Parse(id);
+                }
+                catch
+                {
+                    convertedID = -1;
+                }
 
-                lblName.Text = n.FlowerName;
-                lblType.Text = n.MsFlowerType.FlowerTypeName;
-                lblDesc.Text = n.FlowerDescription;
-                lblPrice.Text = n.FlowerPrice.ToString();
-                Image1.ImageUrl = n.FlowerImage;
+               if(convertedID != -1)
+                {
+                    MsFlower n = poController.GetFlowerById(convertedID);
+
+                    LblName.Text = n.FlowerName;
+                    LblType.Text = n.MsFlowerType.FlowerTypeName;
+                    LblDesc.Text = n.FlowerDescription;
+                    LblPrice.Text = n.FlowerPrice.ToString();
+                    Image1.ImageUrl = n.FlowerImage;
+                }
+                else
+                {
+                    Response.Redirect("Home.aspx");
+                }
             }
         }
         protected void poBtn_Click(object sender, EventArgs e)

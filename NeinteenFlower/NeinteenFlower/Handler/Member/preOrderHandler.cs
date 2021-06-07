@@ -9,9 +9,9 @@ namespace NeinteenFlower.Handler
 {
     public class PreOrderHandler
     {
-        public MsFlower getFlowerById(int id)
+        public MsFlower GetFlowerById(int id)
         {
-            return FlowerRepository.shared.getFlowerById(id);
+            return FlowerRepository.shared.GetFlowerById(id);
         }
 
         public bool CheckMemberEmailExist(string email)

@@ -79,7 +79,7 @@ namespace NeinteenFlower.Controller
 
            
 
-            ifh.insertFlower(name, fileLoc, description, flowerTypeId, pricee);
+            ifh.InsertFlower(name, fileLoc, description, flowerTypeId, pricee);
             return "";
         }
         public int CheckIfUserIsMember(string email)

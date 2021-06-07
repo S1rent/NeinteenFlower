@@ -13,17 +13,17 @@
                 <th>Flower Image</th>
             </tr>
            <tr>
-                <td><asp:Label ID="lblName" runat="server"></asp:Label></td>
-                <td><asp:Label ID="lblType" runat="server" ></asp:Label></td>
-                <td><asp:Label ID="lblDesc" runat="server"></asp:Label></td>
-                <td><asp:Label ID="lblPrice" runat="server"></asp:Label></td>
+                <td><asp:Label ID="LblName" runat="server"></asp:Label></td>
+                <td><asp:Label ID="LblType" runat="server" ></asp:Label></td>
+                <td><asp:Label ID="LblDesc" runat="server"></asp:Label></td>
+                <td><asp:Label ID="LblPrice" runat="server"></asp:Label></td>
                 <td><asp:Image ID="Image1" runat="server" Width="300px" Height="300px" /></td> 
             </tr>
             </table>
         <br />
         <div>
-            <asp:Label ID="lblQuantity" runat="server" Text="Quantity"></asp:Label>
-           <asp:TextBox ID="quantityTxt" runat="server" TextMode="Number"></asp:TextBox>
+            <asp:Label ID="LblQuantity" runat="server" Text="Quantity"></asp:Label>
+           <asp:TextBox ID="QuantityTxt" runat="server" TextMode="Number"></asp:TextBox>
         </div>
         <br />
         <div>

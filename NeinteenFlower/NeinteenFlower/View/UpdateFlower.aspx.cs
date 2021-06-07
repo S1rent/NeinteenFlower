@@ -22,7 +22,7 @@ namespace NeinteenFlower.View
 
             if (!Page.IsPostBack)
             {
-                mf = FlowerRepository.shared.getFlowerById(id_);
+                mf = FlowerRepository.shared.GetFlowerById(id_);
                 
                 if (mf == null)
                 {

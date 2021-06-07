@@ -15,40 +15,40 @@ namespace NeinteenFlower.View
     {
 
         /// <summary>
-        /// lblName control.
+        /// LblName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblName;
+        protected global::System.Web.UI.WebControls.Label LblName;
 
         /// <summary>
-        /// lblType control.
+        /// LblType control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblType;
+        protected global::System.Web.UI.WebControls.Label LblType;
 
         /// <summary>
-        /// lblDesc control.
+        /// LblDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDesc;
+        protected global::System.Web.UI.WebControls.Label LblDesc;
 
         /// <summary>
-        /// lblPrice control.
+        /// LblPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblPrice;
+        protected global::System.Web.UI.WebControls.Label LblPrice;
 
         /// <summary>
         /// Image1 control.
@@ -60,22 +60,22 @@ namespace NeinteenFlower.View
         protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
-        /// lblQuantity control.
+        /// LblQuantity control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblQuantity;
+        protected global::System.Web.UI.WebControls.Label LblQuantity;
 
         /// <summary>
-        /// quantityTxt control.
+        /// QuantityTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox quantityTxt;
+        protected global::System.Web.UI.WebControls.TextBox QuantityTxt;
 
         /// <summary>
         /// poBtn control.

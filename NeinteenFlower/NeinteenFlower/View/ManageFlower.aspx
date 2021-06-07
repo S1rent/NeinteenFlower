@@ -4,9 +4,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div>
-            <asp:HyperLink ID="insertFlower" runat="server" NavigateUrl="~/View/InsertFlower.aspx">Insert Flower</asp:HyperLink>
+            <asp:HyperLink ID="InsertFlower" runat="server" NavigateUrl="~/View/InsertFlower.aspx">Insert Flower</asp:HyperLink>
             <br /> <br />
-            <asp:Label Text="deleteSuccess" runat="server" ID="lblDel" Visible="false"/>
+            <asp:Label Text="Delete Success" runat="server" ID="lblDel" Visible="false"/>
         </div>
 
         <table style="width:900px" border="1" id="FlowerTable">
@@ -33,10 +33,10 @@
                         <td><%# Eval("FlowerPrice") %></td>
                         <td><image src='<%# Eval("FlowerImage") %>'' style="width: 300px; height: 300px;"></image></td>
                         <td>
-                            <asp:Button ID="btnUp" runat="server" Text="Update" OnClick="btnUp_Click" CommandArgument='<%# Eval("FlowerID") %>' />
+                            <asp:Button ID="BtnUp" runat="server" Text="Update" OnClick="BtnUp_Click" CommandArgument='<%# Eval("FlowerID") %>' />
                         </td>
                         <td>
-                            <asp:Button ID="btnDel" runat="server" Text="Delete" OnClick="btnDel_Click" CommandArgument='<%# Eval("FlowerID") %>' />
+                            <asp:Button ID="BtnDel" runat="server" Text="Delete" OnClick="BtnDel_Click" CommandArgument='<%# Eval("FlowerID") %>' />
                         </td>
                     </tr>
                 </ItemTemplate>

@@ -24,13 +24,13 @@ namespace NeinteenFlower.View
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// nameTxt control.
+        /// NameTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox nameTxt;
+        protected global::System.Web.UI.WebControls.TextBox NameTxt;
 
         /// <summary>
         /// Label2 control.
@@ -60,13 +60,13 @@ namespace NeinteenFlower.View
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// descTxt control.
+        /// DescTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox descTxt;
+        protected global::System.Web.UI.WebControls.TextBox DescTxt;
 
         /// <summary>
         /// Label4 control.
@@ -78,13 +78,13 @@ namespace NeinteenFlower.View
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// typeTxt control.
+        /// TypeTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox typeTxt;
+        protected global::System.Web.UI.WebControls.TextBox TypeTxt;
 
         /// <summary>
         /// Label5 control.
@@ -96,30 +96,30 @@ namespace NeinteenFlower.View
         protected global::System.Web.UI.WebControls.Label Label5;
 
         /// <summary>
-        /// priceTxt control.
+        /// PriceTxt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox priceTxt;
+        protected global::System.Web.UI.WebControls.TextBox PriceTxt;
 
         /// <summary>
-        /// btnInsert control.
+        /// BtnInsert control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnInsert;
+        protected global::System.Web.UI.WebControls.Button BtnInsert;
 
         /// <summary>
-        /// lblMsg control.
+        /// LblMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMsg;
+        protected global::System.Web.UI.WebControls.Label LblMsg;
     }
 }

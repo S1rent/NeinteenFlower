@@ -10,9 +10,9 @@ namespace NeinteenFlower.Controller
     public class ManageFlowerController
     {
         ManageFlowerHandler dfHandler = new ManageFlowerHandler();
-        public void deleteFlowerById(int id)
+        public void DeleteFlowerById(int id)
         {
-            dfHandler.deleteFlowerById(id);
+            dfHandler.DeleteFlowerById(id);
         }
 
         public List<MsFlower> GetFlowerList()

@@ -17,7 +17,7 @@ namespace NeinteenFlower.Controller
             int pricee = 0;
             int flowerTypeId = 0;
             flowerID = int.Parse(id);
-            mf = FlowerRepository.shared.getFlowerById(flowerID);
+            mf = FlowerRepository.shared.GetFlowerById(flowerID);
             string fileLoc = mf.FlowerImage;
 
             if (name.Equals(""))

@@ -9,9 +9,9 @@ namespace NeinteenFlower.Handler
 {
     public class ManageFlowerHandler
     {
-        public void deleteFlowerById(int id)
+        public void DeleteFlowerById(int id)
         {
-            FlowerRepository.shared.deleteFlowerById(id);
+            FlowerRepository.shared.DeleteFlowerById(id);
         }
         public List<MsFlower> GetFlowerList()
         {

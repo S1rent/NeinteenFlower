@@ -18,7 +18,7 @@ namespace NeinteenFlower.Repository
             return flowerList;
         }
 
-        public MsFlower getFlowerById(int id)
+        public MsFlower GetFlowerById(int id)
         {
             return (from x in db.MsFlowers 
                     join y in db.MsFlowerTypes
@@ -26,7 +26,7 @@ namespace NeinteenFlower.Repository
                     where x.FlowerID == id select x).FirstOrDefault();
         }
 
-        public void deleteFlowerById(int id)
+        public void DeleteFlowerById(int id)
         {
             MsFlower f = (from x in db.MsFlowers
                           where x.FlowerID == id
@@ -35,13 +35,13 @@ namespace NeinteenFlower.Repository
             db.SaveChanges();
         }
 
-        public void insertFlower(MsFlower flower)
+        public void InsertFlower(MsFlower flower)
         {
             db.MsFlowers.Add(flower);
             db.SaveChanges();
         }
 
-        public void updateFlower(int id, string name, string image, string description, int flowerType, int price)
+        public void UpdateFlower(int id, string name, string image, string description, int flowerType, int price)
         {
             MsFlower f = (from x in db.MsFlowers
                           where x.FlowerID == id

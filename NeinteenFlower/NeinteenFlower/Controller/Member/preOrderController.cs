@@ -10,9 +10,9 @@ namespace NeinteenFlower.Controller
     public class PreOrderController
     {
         PreOrderHandler poHandler = new PreOrderHandler();
-        public MsFlower getFlowerById(int id)
+        public MsFlower GetFlowerById(int id)
         {
-            return poHandler.getFlowerById(id);
+            return poHandler.GetFlowerById(id);
         }
         public int CheckIfUserIsMember(string email)
         {

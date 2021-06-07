@@ -15,13 +15,13 @@ namespace NeinteenFlower.View
     {
 
         /// <summary>
-        /// insertFlower control.
+        /// InsertFlower control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink insertFlower;
+        protected global::System.Web.UI.WebControls.HyperLink InsertFlower;
 
         /// <summary>
         /// lblDel control.

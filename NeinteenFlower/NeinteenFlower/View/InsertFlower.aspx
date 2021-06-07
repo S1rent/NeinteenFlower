@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <div>
             <asp:Label ID="Label1" runat="server" Text="Name: "></asp:Label>
-            <asp:TextBox ID="nameTxt" runat="server"></asp:TextBox>
+            <asp:TextBox ID="NameTxt" runat="server"></asp:TextBox>
         </div>
         <br /> <br />
          <div>
@@ -15,19 +15,19 @@
         <br /> <br />
          <div>
             <asp:Label ID="Label3" runat="server" Text="Description: "></asp:Label>
-            <asp:TextBox ID="descTxt" runat="server"></asp:TextBox>
+            <asp:TextBox ID="DescTxt" runat="server"></asp:TextBox>
         </div>
         <br /> <br />
          <div>
             <asp:Label ID="Label4" runat="server" Text="Flower Type: "></asp:Label>
-            <asp:TextBox ID="typeTxt" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TypeTxt" runat="server"></asp:TextBox>
         </div>
         <br /> <br />
          <div>
             <asp:Label ID="Label5" runat="server" Text="Price: "></asp:Label>
-            <asp:TextBox ID="priceTxt" runat="server"></asp:TextBox>
+            <asp:TextBox ID="PriceTxt" runat="server"></asp:TextBox>
         </div>
         <br /> <br />
-        <asp:Button ID="btnInsert" runat="server" Text="Insert Flower" OnClick="btnInsert_Click" />
-        <asp:Label ID="lblMsg" runat="server"></asp:Label>
+        <asp:Button ID="BtnInsert" runat="server" Text="Insert Flower" OnClick="BtnInsert_Click" />
+        <asp:Label ID="LblMsg" runat="server"></asp:Label>
 </asp:Content>
