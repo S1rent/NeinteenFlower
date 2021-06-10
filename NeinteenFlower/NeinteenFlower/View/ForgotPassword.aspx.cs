@@ -28,7 +28,7 @@ namespace NeinteenFlower.View
         protected void ButtonResetTapped(object sender, EventArgs e)
         {
             LabelErrorMessage.ForeColor = System.Drawing.Color.Red;
-            string email = TextBoxEmail.Text.Trim(),
+            string email = TextBoxEmail.Text.Trim().ToLower(),
                    password = TextBoxPassword.Text.Trim(),
                    captcha = LabelCaptchaHelper.Text.Trim();
             string response = controller.ForgotPassword(email, password, captcha);

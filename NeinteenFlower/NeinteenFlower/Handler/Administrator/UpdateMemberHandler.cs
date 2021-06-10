@@ -1,4 +1,5 @@
-﻿using NeinteenFlower.Model;
+﻿using NeinteenFlower.Factory;
+using NeinteenFlower.Model;
 using NeinteenFlower.Repository;
 using System;
 using System.Collections.Generic;
@@ -30,8 +31,13 @@ namespace NeinteenFlower.Handler
             return true;
         }
 
-        public void UpdateMember(MsMember member)
+        public void UpdateMember(int id, string email, string password, string name, string birthDate,
+                    string gender, string phoneNumber, string address)
         {
+            MsMember member = MemberFactory.shared.makeMemberWithID(
+                id, email, password, name, birthDate,
+                gender, phoneNumber, address
+            );
             MemberRepository.shared.UpdateMember(member);
         }
     }

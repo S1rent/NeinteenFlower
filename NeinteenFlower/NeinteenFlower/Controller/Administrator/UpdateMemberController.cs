@@ -1,5 +1,4 @@
-﻿using NeinteenFlower.Factory;
-using NeinteenFlower.Handler;
+﻿using NeinteenFlower.Handler;
 using NeinteenFlower.Model;
 using System;
 using System.Collections.Generic;
@@ -70,10 +69,8 @@ namespace NeinteenFlower.Controller
 
             //Update
             handler.UpdateMember(
-                MemberFactory.shared.makeMemberWithID(
-                    id, email, password, name, this.GenerateCorrectBirthdateFormat(birthDate),
-                    this.GenerateGenderFormat(isMale, isFemale), phoneNumber, address
-                )
+                id, email, password, name, this.GenerateCorrectBirthdateFormat(birthDate),
+                this.GenerateGenderFormat(isMale, isFemale), phoneNumber, address
             );
 
             return "";
