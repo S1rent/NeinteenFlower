@@ -57,10 +57,8 @@ namespace NeinteenFlower.Controller
 
             //Register
             handler.InsertMember(
-                MemberFactory.shared.makeMember(
-                    email, password, name, this.GenerateCorrectBirthdateFormat(birthDate),
+                email, password, name, this.GenerateCorrectBirthdateFormat(birthDate),
                     this.GenerateGenderFormat(isMale, isFemale), phoneNumber, address
-                )
             );
 
             return "";

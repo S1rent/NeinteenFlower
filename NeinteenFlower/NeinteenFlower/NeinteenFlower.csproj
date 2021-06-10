@@ -129,7 +129,6 @@
     <Compile Include="Handler\Administrator\ManageEmployeeHandler.cs" />
     <Compile Include="Handler\Administrator\UpdateEmployeeHandler.cs" />
     <Compile Include="Handler\Employee\ManageFlowerHandler.cs" />
-    <Compile Include="Handler\Employee\MsEmplyee.cs" />
     <Compile Include="Handler\Guest\ForgotPasswordHandler.cs" />
     <Compile Include="Handler\HeaderFooterHandler.cs" />
     <Compile Include="Handler\HomeHandler.cs" />
