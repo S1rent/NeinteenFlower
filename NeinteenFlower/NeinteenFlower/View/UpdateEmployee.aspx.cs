@@ -74,7 +74,7 @@ namespace NeinteenFlower.View
         protected void ButtonUpdateTapped(object sender, EventArgs e)
         {
             LabelErrorMessage.ForeColor = System.Drawing.Color.Red;
-            string email = TextBoxEmail.Text.Trim(),
+            string email = TextBoxEmail.Text.Trim().ToLower(),
                    password = TextBoxPassword.Text.Trim(),
                    name = TextBoxName.Text.Trim(),
                    birthDate = TextBoxCalendar.Text.Trim(),

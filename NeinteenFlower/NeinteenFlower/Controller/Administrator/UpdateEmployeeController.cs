@@ -1,5 +1,4 @@
-﻿using NeinteenFlower.Factory;
-using NeinteenFlower.Handler.Administrator;
+﻿using NeinteenFlower.Handler.Administrator;
 using NeinteenFlower.Model;
 using System;
 using System.Collections.Generic;
@@ -86,10 +85,8 @@ namespace NeinteenFlower.Controller.Administrator
             if (convertedSalary != -1)
             {
                 handler.UpdateEmployee(
-                    EmployeeFactory.shared.makeEmployeeWithID(
-                        id, email, password, name, this.GenerateCorrectBirthdateFormat(birthDate),
-                        this.GenerateGenderFormat(isMale, isFemale), phoneNumber, address, convertedSalary
-                    )
+                    id, email, password, name, this.GenerateCorrectBirthdateFormat(birthDate),
+                    this.GenerateGenderFormat(isMale, isFemale), phoneNumber, address, convertedSalary
                 );
             }
 

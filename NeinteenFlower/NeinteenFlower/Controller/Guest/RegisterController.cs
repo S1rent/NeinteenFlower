@@ -1,5 +1,4 @@
-﻿using NeinteenFlower.Factory;
-using NeinteenFlower.Handler;
+﻿using NeinteenFlower.Handler;
 using NeinteenFlower.Model;
 using System;
 using System.Collections.Generic;

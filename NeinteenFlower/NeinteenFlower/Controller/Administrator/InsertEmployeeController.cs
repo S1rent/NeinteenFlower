@@ -1,5 +1,4 @@
-﻿using NeinteenFlower.Factory;
-using NeinteenFlower.Handler.Administrator;
+﻿using NeinteenFlower.Handler.Administrator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,10 +79,8 @@ namespace NeinteenFlower.Controller.Administrator
             if(convertedSalary != -1)
             {
                 handler.InsertEmployee(
-                    EmployeeFactory.shared.makeEmployee(
-                        email, password, name, this.GenerateCorrectBirthdateFormat(birthDate),
-                        this.GenerateGenderFormat(isMale, isFemale), phoneNumber, address, convertedSalary
-                    )
+                    email, password, name, this.GenerateCorrectBirthdateFormat(birthDate),
+                    this.GenerateGenderFormat(isMale, isFemale), phoneNumber, address, convertedSalary
                 );
             }
 

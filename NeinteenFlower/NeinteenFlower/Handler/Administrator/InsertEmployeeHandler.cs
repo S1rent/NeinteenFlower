@@ -1,4 +1,5 @@
-﻿using NeinteenFlower.Model;
+﻿using NeinteenFlower.Factory;
+using NeinteenFlower.Model;
 using NeinteenFlower.Repository;
 using System;
 using System.Collections.Generic;
@@ -25,8 +26,13 @@ namespace NeinteenFlower.Handler.Administrator
             return true;
         }
 
-        public void InsertEmployee(MsEmployee employee)
+        public void InsertEmployee(string email, string password, string name, string birthDate,
+                        string gender, string phoneNumber, string address, int convertedSalary)
         {
+            MsEmployee employee = EmployeeFactory.shared.makeEmployee(
+                                        email, password, name, birthDate,
+                                        gender, phoneNumber, address, convertedSalary
+                                    );
             EmployeeRepository.shared.InsertEmployee(employee);
         }
     }

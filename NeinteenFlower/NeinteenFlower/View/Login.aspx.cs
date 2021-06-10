@@ -35,7 +35,7 @@ namespace NeinteenFlower_FrontEnd.View
         protected void ButtonLoginTapped(object sender, EventArgs e)
         {
             LabelErrorMessage.ForeColor = System.Drawing.Color.Red;
-            string email = TextBoxEmail.Text.Trim(),
+            string email = TextBoxEmail.Text.Trim().ToLower(),
                    password = TextBoxPassword.Text.Trim();
 
             bool isRememberMeChecked = CheckBoxRememberMe.Checked;
