@@ -29,6 +29,17 @@ namespace NeinteenFlower.Repository
             return memberList;
         }
 
+        public MsMember GetSingleMemberByEmail(string email)
+        {
+            MsMember member = (
+                from memberData in db.MsMembers
+                where memberData.MemberEmail.Equals(email)
+                select memberData
+            ).FirstOrDefault();
+
+            return member;
+        }
+
         public void InsertMember(MsMember member)
         {
             db.MsMembers.Add(member);

@@ -27,6 +27,7 @@
         </div>
         <br />
         <div>
+            <asp:Label ID="LabelErrorMessage" runat="server" Text="" Visible="false"></asp:Label><br />
             <asp:Button ID="poBtn" runat="server" Text="PreOrder" OnClick="poBtn_Click"/>
         </div>
 </asp:Content>

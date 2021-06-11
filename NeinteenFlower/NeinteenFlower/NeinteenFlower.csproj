@@ -123,6 +123,7 @@
     <Compile Include="Factory\EmployeeFactory.cs" />
     <Compile Include="Factory\FlowerFactory.cs" />
     <Compile Include="Factory\MemberFactory.cs" />
+    <Compile Include="Factory\TransactionFactory.cs" />
     <Compile Include="Handler\Administrator\InsertEmployeeHandler.cs" />
     <Compile Include="Handler\Administrator\InsertMemberHandler.cs" />
     <Compile Include="Controller\Administrator\ManageEmployeeController.cs" />
@@ -178,6 +179,7 @@
     <Compile Include="Repository\ForgotPasswordRepository.cs" />
     <Compile Include="Repository\HeaderFooterRepository.cs" />
     <Compile Include="Repository\MemberRepository.cs" />
+    <Compile Include="Repository\TransactionRepository.cs" />
     <Compile Include="View\ForgotPassword.aspx.cs">
       <DependentUpon>ForgotPassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

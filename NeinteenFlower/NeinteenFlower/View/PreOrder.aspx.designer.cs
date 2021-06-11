@@ -78,6 +78,15 @@ namespace NeinteenFlower.View
         protected global::System.Web.UI.WebControls.TextBox QuantityTxt;
 
         /// <summary>
+        /// LabelErrorMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelErrorMessage;
+
+        /// <summary>
         /// poBtn control.
         /// </summary>
         /// <remarks>
