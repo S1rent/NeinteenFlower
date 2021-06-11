@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UpdateFlower.aspx.cs" Inherits="NeinteenFlower.View.UpdateFlower" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/View/HeaderFooter.Master" CodeBehind="UpdateFlower.aspx.cs" Inherits="NeinteenFlower.View.UpdateFlower" %>
 
 
 <!DOCTYPE html>
