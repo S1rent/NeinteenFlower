@@ -24,13 +24,55 @@ namespace NeinteenFlower.Repository
             db.SaveChanges();
         }
 
-        public List<TrHeader> GetMemberCurrentHeader(int memberID, string date)
+        public List<TrHeader> GetMemberCurrentTransactionHeader(int memberID, string date)
         {
             List<TrHeader> headerList = (from data in db.TrHeaders
                                          where data.MemberID == memberID
                                          && data.TransactionDate.Equals(date)
                                          select data).ToList();
             return headerList;
+        }
+
+        public List<TrHeader> GetAllMemberTransactionHeader(int memberID)
+        {
+            List<TrHeader> headerList = (from data in db.TrHeaders
+                                         where data.MemberID == memberID
+                                         select data).ToList();
+            return headerList;
+        }
+
+        public List<TrDetail> GetAllMemberTransactionDetail(int transactionID)
+        {
+            List<TrDetail> detailList = (from data in db.TrDetails
+                                         where data.TransactionID == transactionID
+                                         select data).ToList();
+            return detailList;
+        }
+
+        public void DeleteMemberTransactionDetail(int transactionID, int flowerID)
+        {
+            TrDetail detail = (from data in db.TrDetails
+                                         where data.TransactionID == transactionID
+                                         && data.FlowerID == flowerID
+                                         select data).FirstOrDefault();
+            if(detail != null)
+            {
+                db.TrDetails.Remove(detail);
+                db.SaveChanges();
+            }
+        }
+
+        public void DeleteMemberTransactionHeader(int memberID, int transactionID)
+        {
+            TrHeader header = (from data in db.TrHeaders
+                               where data.MemberID == memberID
+                               && data.TransactionID == transactionID
+                               select data).FirstOrDefault();
+            if (header != null)
+            {
+                db.TrHeaders.Remove(header);
+                db.SaveChanges();
+            }
         }
     }
 }

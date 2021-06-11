@@ -34,11 +34,11 @@ namespace NeinteenFlower.Handler
 
         public void PreOrder(int flowerID, int memberID, int quantity, string currentDate)
         {
-            List<TrHeader> headerList = TransactionRepository.shared.GetMemberCurrentHeader(memberID, currentDate);
+            List<TrHeader> headerList = TransactionRepository.shared.GetMemberCurrentTransactionHeader(memberID, currentDate);
             // Artinya hari itu udh pernah pre order
             if(headerList.Count != 0)
             {
-                int transactionID = TransactionRepository.shared.GetMemberCurrentHeader(memberID, currentDate)[0].TransactionID;
+                int transactionID = TransactionRepository.shared.GetMemberCurrentTransactionHeader(memberID, currentDate)[0].TransactionID;
                 TrDetail detail = TransactionFactory.shared.makeDetail(transactionID, flowerID, quantity);
                 TransactionRepository.shared.InsertTransactionDetail(detail);
             }
@@ -48,7 +48,7 @@ namespace NeinteenFlower.Handler
                 TrHeader header = TransactionFactory.shared.makeHeader(memberID, currentDate);
                 TransactionRepository.shared.InsertTransactionHeader(header);
 
-                int transactionID = TransactionRepository.shared.GetMemberCurrentHeader(memberID, currentDate)[0].TransactionID;
+                int transactionID = TransactionRepository.shared.GetMemberCurrentTransactionHeader(memberID, currentDate)[0].TransactionID;
                 TrDetail detail = TransactionFactory.shared.makeDetail(transactionID, flowerID, quantity);
                 TransactionRepository.shared.InsertTransactionDetail(detail);
             }
