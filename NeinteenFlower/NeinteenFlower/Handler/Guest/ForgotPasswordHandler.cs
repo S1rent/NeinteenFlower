@@ -32,11 +32,11 @@ namespace NeinteenFlower.Handler
         {
             if(isMember)
             {
-                ForgotPasswordRepository.shared.UpdateMemberPassword(email, password);
+                MemberRepository.shared.UpdateMemberPassword(email, password);
             }
             else
             {
-                ForgotPasswordRepository.shared.UpdateEmployeePassword(email, password);
+                EmployeeRepository.shared.UpdateEmployeePassword(email, password);
             }
         }
     }

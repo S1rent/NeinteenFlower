@@ -78,5 +78,15 @@ namespace NeinteenFlower.Repository
                 db.SaveChanges();
             }
         }
+
+        public void UpdateEmployeePassword(string email, string password)
+        {
+            MsEmployee employee = (from data in db.MsEmployees where data.EmployeeEmail.Equals(email) select data).FirstOrDefault();
+            if (employee != null)
+            {
+                employee.EmployeePassword = password;
+                db.SaveChanges();
+            }
+        }
     }
 }
