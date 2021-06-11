@@ -32,9 +32,21 @@ namespace NeinteenFlower.View
                 {
                     NameTxt.Text = mf.FlowerName;
                     DescTxt.Text = mf.FlowerDescription;
-                    TypeTxt.Text = mf.FlowerTypeID.ToString();
                     PriceTxt.Text = mf.FlowerPrice.ToString();
                     Picture.ImageUrl = mf.FlowerImage;
+
+                    if (mf.FlowerTypeID == 1)
+                    {
+                        TypeTxt.Text = "Daisies";
+                    }
+                    else if (mf.FlowerTypeID == 2)
+                    {
+                        TypeTxt.Text = "Lilies";
+                    }
+                    else
+                    {
+                        TypeTxt.Text = "Roses";
+                    }
                 }
             }
         }
