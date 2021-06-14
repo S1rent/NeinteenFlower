@@ -15,6 +15,18 @@ namespace NeinteenFlower.Handler.Member
             return TransactionRepository.shared.GetAllMemberTransactionHeader(member[0].MemberID);
         }
 
+        public bool CheckMemberEmailExist(string email)
+        {
+            if (MemberRepository.shared.GetMemberByEmail(email).Count != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public MsFlower GetFlowerByID(int id)
         {
             return FlowerRepository.shared.GetFlowerById(id);

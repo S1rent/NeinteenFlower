@@ -42,7 +42,7 @@ namespace NeinteenFlower.Handler
         }
         public MsEmployee GetEmployeeData(string email)
         {
-            return HeaderFooterRepository.shared.GetEmployeeData(email);
+            return EmployeeRepository.shared.GetEmployeeData(email);
         }
     }
 }

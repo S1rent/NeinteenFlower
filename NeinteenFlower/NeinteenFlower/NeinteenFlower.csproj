@@ -1324,7 +1324,6 @@
     </Compile>
     <Compile Include="Repository\EmployeeRepository.cs" />
     <Compile Include="Repository\FlowerRepository.cs" />
-    <Compile Include="Repository\HeaderFooterRepository.cs" />
     <Compile Include="Repository\MemberRepository.cs" />
     <Compile Include="Repository\TransactionRepository.cs" />
     <Compile Include="View\ForgotPassword.aspx.cs">

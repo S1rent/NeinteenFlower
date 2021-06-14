@@ -21,6 +21,11 @@ namespace NeinteenFlower.View
                 Response.Redirect("Login.aspx");
             }
 
+            if (!controller.CheckIfUserIsMember(Session["user_email"].ToString()))
+            {
+                Response.Redirect("Home.aspx");
+            }
+
             NeinteenFlowerReport report = new NeinteenFlowerReport();
             CrystalReportViewer1.ReportSource = report;
 

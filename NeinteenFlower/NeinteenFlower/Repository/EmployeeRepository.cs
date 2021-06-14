@@ -23,6 +23,15 @@ namespace NeinteenFlower.Repository
             return employeeList;
         }
 
+        public MsEmployee GetEmployeeData(string email)
+        {
+            MsEmployee employee = (
+                from data in db.MsEmployees where data.EmployeeEmail.Equals(email) select data
+            ).FirstOrDefault();
+
+            return employee;
+        }
+
         public List<MsEmployee> GetEmployeeList()
         {
             List<MsEmployee> employeeList = (

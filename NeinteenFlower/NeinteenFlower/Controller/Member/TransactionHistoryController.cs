@@ -11,6 +11,18 @@ namespace NeinteenFlower.Controller.Member
     {
         TransactionHistoryHandler handler = new TransactionHistoryHandler();
 
+        public bool CheckIfUserIsMember(string email)
+        {
+            bool isMember = handler.CheckMemberEmailExist(email);
+
+            if (isMember)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public List<TrHeader> GetMemberTransactionHeaderList(string email)
         {
             return handler.GetMemberTransactionHeaderList(email);
