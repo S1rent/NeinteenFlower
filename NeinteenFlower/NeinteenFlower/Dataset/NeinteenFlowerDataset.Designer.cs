@@ -602,6 +602,10 @@ namespace NeinteenFlower.Dataset {
             
             private global::System.Data.DataColumn columnQuantity;
             
+            private global::System.Data.DataColumn columnSubTotal;
+            
+            private global::System.Data.DataColumn columnGrandTotal;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public TransactionDetailDataTable() {
@@ -661,6 +665,22 @@ namespace NeinteenFlower.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SubTotalColumn {
+                get {
+                    return this.columnSubTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn GrandTotalColumn {
+                get {
+                    return this.columnGrandTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -696,12 +716,14 @@ namespace NeinteenFlower.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TransactionDetailRow AddTransactionDetailRow(TransactionHeaderRow parentTransactionHeaderRowByTransactionHeader_TransactionDetail, string FlowerID, string Quantity) {
+            public TransactionDetailRow AddTransactionDetailRow(TransactionHeaderRow parentTransactionHeaderRowByTransactionHeader_TransactionDetail, string FlowerID, string Quantity, string SubTotal, string GrandTotal) {
                 TransactionDetailRow rowTransactionDetailRow = ((TransactionDetailRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         FlowerID,
-                        Quantity};
+                        Quantity,
+                        SubTotal,
+                        GrandTotal};
                 if ((parentTransactionHeaderRowByTransactionHeader_TransactionDetail != null)) {
                     columnValuesArray[0] = parentTransactionHeaderRowByTransactionHeader_TransactionDetail[0];
                 }
@@ -730,6 +752,8 @@ namespace NeinteenFlower.Dataset {
                 this.columnTransactionID = base.Columns["TransactionID"];
                 this.columnFlowerID = base.Columns["FlowerID"];
                 this.columnQuantity = base.Columns["Quantity"];
+                this.columnSubTotal = base.Columns["SubTotal"];
+                this.columnGrandTotal = base.Columns["GrandTotal"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -741,6 +765,10 @@ namespace NeinteenFlower.Dataset {
                 base.Columns.Add(this.columnFlowerID);
                 this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnQuantity);
+                this.columnSubTotal = new global::System.Data.DataColumn("SubTotal", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSubTotal);
+                this.columnGrandTotal = new global::System.Data.DataColumn("GrandTotal", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGrandTotal);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1041,6 +1069,38 @@ namespace NeinteenFlower.Dataset {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string SubTotal {
+                get {
+                    try {
+                        return ((string)(this[this.tableTransactionDetail.SubTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SubTotal\' in table \'TransactionDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTransactionDetail.SubTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string GrandTotal {
+                get {
+                    try {
+                        return ((string)(this[this.tableTransactionDetail.GrandTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GrandTotal\' in table \'TransactionDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTransactionDetail.GrandTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public TransactionHeaderRow TransactionHeaderRow {
                 get {
                     return ((TransactionHeaderRow)(this.GetParentRow(this.Table.ParentRelations["TransactionHeader_TransactionDetail"])));
@@ -1084,6 +1144,30 @@ namespace NeinteenFlower.Dataset {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetQuantityNull() {
                 this[this.tableTransactionDetail.QuantityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSubTotalNull() {
+                return this.IsNull(this.tableTransactionDetail.SubTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSubTotalNull() {
+                this[this.tableTransactionDetail.SubTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsGrandTotalNull() {
+                return this.IsNull(this.tableTransactionDetail.GrandTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetGrandTotalNull() {
+                this[this.tableTransactionDetail.GrandTotalColumn] = global::System.Convert.DBNull;
             }
         }
         

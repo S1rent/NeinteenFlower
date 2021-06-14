@@ -52,6 +52,9 @@ namespace NeinteenFlower.View
                     detail["TransactionID"] = detailData.TransactionID;
                     detail["FlowerID"] = detailData.FlowerID;
                     detail["Quantity"] = detailData.Quantity;
+                    detail["SubTotal"] = controller.CountSubTotal(detailData.FlowerID, detailData.Quantity);
+                    detail["GrandTotal"] = controller.CountGrandTotal(headerData);
+
                     detailTable.Rows.Add(detail);
                 }
             }

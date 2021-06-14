@@ -14,5 +14,10 @@ namespace NeinteenFlower.Handler.Member
             List<MsMember> member = MemberRepository.shared.GetMemberByEmail(email);
             return TransactionRepository.shared.GetAllMemberTransactionHeader(member[0].MemberID);
         }
+
+        public MsFlower GetFlowerByID(int id)
+        {
+            return FlowerRepository.shared.GetFlowerById(id);
+        }
     }
 }
