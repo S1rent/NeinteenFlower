@@ -52,10 +52,10 @@ namespace NeinteenFlower.Repository
         public void DeleteMemberTransactionDetail(int transactionID, int flowerID)
         {
             TrDetail detail = (from data in db.TrDetails
-                                         where data.TransactionID == transactionID
-                                         && data.FlowerID == flowerID
-                                         select data).FirstOrDefault();
-            if(detail != null)
+                               where data.TransactionID == transactionID
+                               && data.FlowerID == flowerID
+                               select data).FirstOrDefault();
+            if (detail != null)
             {
                 db.TrDetails.Remove(detail);
                 db.SaveChanges();
@@ -71,6 +71,31 @@ namespace NeinteenFlower.Repository
             if (header != null)
             {
                 db.TrHeaders.Remove(header);
+                db.SaveChanges();
+            }
+        }
+
+        public bool CheckAlreadyBuyFlower(int transactionID, int flowerID)
+        {
+            List<TrDetail> detailList = (from data in db.TrDetails
+                                         where data.TransactionID == transactionID
+                                         && data.FlowerID == flowerID
+                                         select data).ToList();
+
+            return (detailList.Count == 0) ? false : true ;
+        }
+
+        public void UpdateTransactionDetailFlowerQuantity(int transactionID, int flowerID, int quantity)
+        {
+            TrDetail detailData = (from data in db.TrDetails
+                                   where data.TransactionID == transactionID
+                                   && data.FlowerID == flowerID
+                                   select data).FirstOrDefault();
+
+            if (detailData != null)
+            {
+                detailData.Quantity += quantity;
+
                 db.SaveChanges();
             }
         }

@@ -35,12 +35,21 @@ namespace NeinteenFlower.Handler
         public void PreOrder(int flowerID, int memberID, int quantity, string currentDate)
         {
             List<TrHeader> headerList = TransactionRepository.shared.GetMemberCurrentTransactionHeader(memberID, currentDate);
-            // Artinya hari itu udh pernah pre order
+            // udh pernah pre order
             if(headerList.Count != 0)
             {
                 int transactionID = TransactionRepository.shared.GetMemberCurrentTransactionHeader(memberID, currentDate)[0].TransactionID;
-                TrDetail detail = TransactionFactory.shared.makeDetail(transactionID, flowerID, quantity);
-                TransactionRepository.shared.InsertTransactionDetail(detail);
+                // udh ada detail yg isinya flower yg sama
+                if(TransactionRepository.shared.CheckAlreadyBuyFlower(transactionID, flowerID))
+                {
+                    TransactionRepository.shared.UpdateTransactionDetailFlowerQuantity(transactionID, flowerID, quantity);
+                }
+                else
+                {
+                    // belom ada
+                    TrDetail detail = TransactionFactory.shared.makeDetail(transactionID, flowerID, quantity);
+                    TransactionRepository.shared.InsertTransactionDetail(detail);
+                }
             }
             else
             {
