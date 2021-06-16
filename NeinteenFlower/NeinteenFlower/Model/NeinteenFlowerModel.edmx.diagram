@@ -4,14 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5d40f32c2ff3446dbcab31817b4395cc" Name="Diagram1" ZoomLevel="107">
-        <EntityTypeShape EntityType="NeinteenFlowerDBModel.MsEmployee" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="NeinteenFlowerDBModel.MsFlower" Width="1.5" PointX="5.75" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="NeinteenFlowerDBModel.MsFlowerType" Width="1.5" PointX="8.375" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="NeinteenFlowerDBModel.MsMember" Width="1.5" PointX="5.875" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="NeinteenFlowerDBModel.TrDetail" Width="1.5" PointX="3.125" PointY="4.375" IsExpanded="true" />
+      <Diagram DiagramId="d125899574844a28a9dcf9adbc280abd" Name="Diagram1">
+        <EntityTypeShape EntityType="NeinteenFlowerDBModel.MsEmployee" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeinteenFlowerDBModel.MsFlower" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeinteenFlowerDBModel.MsFlowerType" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeinteenFlowerDBModel.MsMember" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="NeinteenFlowerDBModel.TrDetail" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="NeinteenFlowerDBModel.TrHeader" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <AssociationConnector Association="NeinteenFlowerDBModel.FK__TrHeader__Employ__2A4B4B5E" ManuallyRouted="false" />
         <AssociationConnector Association="NeinteenFlowerDBModel.FK__MsFlower__Flower__2D27B809" ManuallyRouted="false" />
         <AssociationConnector Association="NeinteenFlowerDBModel.FK__TrDetail__Flower__30F848ED" ManuallyRouted="false" />
         <AssociationConnector Association="NeinteenFlowerDBModel.FK__TrHeader__Member__29572725" ManuallyRouted="false" />

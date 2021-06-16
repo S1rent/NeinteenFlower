@@ -8,13 +8,17 @@ namespace NeinteenFlower.Repository
 {
     public class FlowerRepository
     {
-        NeinteenFlowerDBEntities db = new NeinteenFlowerDBEntities();
+        NeinteenFlowerDBEntities1 db = new NeinteenFlowerDBEntities1();
         public static FlowerRepository shared = new FlowerRepository();
         private FlowerRepository() { }
 
         public List<MsFlower> GetFlowerList()
         {
-            List<MsFlower> flowerList = (from data in db.MsFlowers select data).ToList();
+            List<MsFlower> flowerList = (
+                from data in db.MsFlowers
+                where data.IsDeleted == 0
+                select data
+                ).ToList();
             return flowerList;
         }
 
@@ -31,8 +35,11 @@ namespace NeinteenFlower.Repository
             MsFlower f = (from x in db.MsFlowers
                           where x.FlowerID == id
                           select x).FirstOrDefault();
-            db.MsFlowers.Remove(f);
-            db.SaveChanges();
+            if(f != null)
+            {
+                f.IsDeleted = 1;
+                db.SaveChanges();
+            }
         }
 
         public void InsertFlower(MsFlower flower)
@@ -41,18 +48,22 @@ namespace NeinteenFlower.Repository
             db.SaveChanges();
         }
 
-        public void UpdateFlower(int id, string name, string image, string description, int flowerType, int price)
+        public void UpdateFlower(MsFlower flower)
         {
-            MsFlower f = (from x in db.MsFlowers
-                          where x.FlowerID == id
-                          select x).FirstOrDefault();
-            f.FlowerName = name;
-            f.FlowerDescription = description;
-            f.FlowerImage = image;
-            f.FlowerPrice = price;
-            f.FlowerTypeID = flowerType;
+            MsFlower dbFlower = (from x in db.MsFlowers
+                                 where x.FlowerID == flower.FlowerID
+                                 select x).FirstOrDefault();
 
-            db.SaveChanges();
+            if(dbFlower != null)
+            {
+                dbFlower.FlowerName = flower.FlowerName;
+                dbFlower.FlowerDescription = flower.FlowerDescription;
+                dbFlower.FlowerImage = flower.FlowerImage;
+                dbFlower.FlowerPrice = flower.FlowerPrice;
+                dbFlower.FlowerTypeID = flower.FlowerTypeID;
+
+                db.SaveChanges();
+            }
         }
     }
 }

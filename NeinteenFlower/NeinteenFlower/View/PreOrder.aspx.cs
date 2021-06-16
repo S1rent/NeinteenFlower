@@ -52,7 +52,7 @@ namespace NeinteenFlower.View
                     else
                     {
                         MsFlower flower = poController.GetFlowerById(convertedID);
-                        if (flower == null)
+                        if (flower == null || flower.IsDeleted == 1)
                         {
                             Response.Redirect("Home.aspx");
                         }

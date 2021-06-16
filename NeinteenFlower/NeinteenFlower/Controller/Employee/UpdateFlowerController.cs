@@ -10,8 +10,30 @@ namespace NeinteenFlower.Controller
 {
     public class UpdateFlowerController
     {
+        UpdateFlowerHandler ufh = new UpdateFlowerHandler();
         static MsFlower mf;
         static int flowerID;
+
+        public bool CheckIfUserIsEmployee(string email)
+        {
+            if(email == null)
+            {
+                return false;
+            }
+            List<MsEmployee> employeeList = ufh.GetEmployeeByEmail(email);
+            if(employeeList.Count == 0 || email.ToLower().Equals("admin@gmail.com"))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public MsFlower GetFlowerByID(int id)
+        {
+            return ufh.GetFlowerByID(id);
+        }
+
+
         public string UpdateFlower(string id, string name, HttpPostedFile image, string description, String flowerType, String price)
         {
             int pricee = 0;
@@ -84,10 +106,16 @@ namespace NeinteenFlower.Controller
                     return "between 20 and 100 inclusively";
                 }
             }
-
-            UpdateFlowerHandler ufh = new UpdateFlowerHandler();
-
-            ufh.updateFlower(flowerID, name, fileLoc, description, flowerTypeId, pricee);
+            var tempIsDeleted = -1;
+            if(mf.IsDeleted == null)
+            {
+                tempIsDeleted = 0;
+            }
+            else
+            {
+                tempIsDeleted = (int)mf.IsDeleted;
+            }
+            ufh.updateFlower(flowerID, name, fileLoc, description, flowerTypeId, pricee, tempIsDeleted);
             return "";
         }
     }

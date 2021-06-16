@@ -29,6 +29,7 @@
           <Property Name="FlowerDescription" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="FlowerPrice" Type="int" Nullable="false" />
           <Property Name="FlowerImage" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="IsDeleted" Type="int" />
         </EntityType>
         <EntityType Name="MsFlowerType">
           <Key>
@@ -65,7 +66,7 @@
           </Key>
           <Property Name="TransactionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MemberID" Type="int" Nullable="false" />
-          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" />
           <Property Name="TransactionDate" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="DiscountPercentage" Type="int" />
         </EntityType>
@@ -105,18 +106,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__TrHeader__Employ__2A4B4B5E">
-          <End Role="MsEmployee" Type="Self.MsEmployee" Multiplicity="1" />
-          <End Role="TrHeader" Type="Self.TrHeader" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MsEmployee">
-              <PropertyRef Name="EmployeeID" />
-            </Principal>
-            <Dependent Role="TrHeader">
-              <PropertyRef Name="EmployeeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__TrHeader__Member__29572725">
           <End Role="MsMember" Type="Self.MsMember" Multiplicity="1" />
           <End Role="TrHeader" Type="Self.TrHeader" Multiplicity="*" />
@@ -148,10 +137,6 @@
             <End Role="TrHeader" EntitySet="TrHeader" />
             <End Role="TrDetail" EntitySet="TrDetail" />
           </AssociationSet>
-          <AssociationSet Name="FK__TrHeader__Employ__2A4B4B5E" Association="Self.FK__TrHeader__Employ__2A4B4B5E">
-            <End Role="MsEmployee" EntitySet="MsEmployee" />
-            <End Role="TrHeader" EntitySet="TrHeader" />
-          </AssociationSet>
           <AssociationSet Name="FK__TrHeader__Member__29572725" Association="Self.FK__TrHeader__Member__29572725">
             <End Role="MsMember" EntitySet="MsMember" />
             <End Role="TrHeader" EntitySet="TrHeader" />
@@ -175,7 +160,6 @@
           <Property Name="EmployeeEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="EmployeeSalary" Type="Int32" Nullable="false" />
           <Property Name="EmployeePassword" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="TrHeaders" Relationship="Self.FK__TrHeader__Employ__2A4B4B5E" FromRole="MsEmployee" ToRole="TrHeader" />
         </EntityType>
         <EntityType Name="MsFlower">
           <Key>
@@ -187,6 +171,7 @@
           <Property Name="FlowerDescription" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="FlowerPrice" Type="Int32" Nullable="false" />
           <Property Name="FlowerImage" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsDeleted" Type="Int32" />
           <NavigationProperty Name="MsFlowerType" Relationship="Self.FK__MsFlower__Flower__2D27B809" FromRole="MsFlower" ToRole="MsFlowerType" />
           <NavigationProperty Name="TrDetails" Relationship="Self.FK__TrDetail__Flower__30F848ED" FromRole="MsFlower" ToRole="TrDetail" />
         </EntityType>
@@ -229,25 +214,12 @@
           </Key>
           <Property Name="TransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MemberID" Type="Int32" Nullable="false" />
-          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="Int32" />
           <Property Name="TransactionDate" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DiscountPercentage" Type="Int32" />
-          <NavigationProperty Name="MsEmployee" Relationship="Self.FK__TrHeader__Employ__2A4B4B5E" FromRole="TrHeader" ToRole="MsEmployee" />
           <NavigationProperty Name="MsMember" Relationship="Self.FK__TrHeader__Member__29572725" FromRole="TrHeader" ToRole="MsMember" />
           <NavigationProperty Name="TrDetails" Relationship="Self.FK__TrDetail__Transa__300424B4" FromRole="TrHeader" ToRole="TrDetail" />
         </EntityType>
-        <Association Name="FK__TrHeader__Employ__2A4B4B5E">
-          <End Role="MsEmployee" Type="Self.MsEmployee" Multiplicity="1" />
-          <End Role="TrHeader" Type="Self.TrHeader" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MsEmployee">
-              <PropertyRef Name="EmployeeID" />
-            </Principal>
-            <Dependent Role="TrHeader">
-              <PropertyRef Name="EmployeeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__MsFlower__Flower__2D27B809">
           <End Role="MsFlowerType" Type="Self.MsFlowerType" Multiplicity="1" />
           <End Role="MsFlower" Type="Self.MsFlower" Multiplicity="*" />
@@ -296,17 +268,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="NeinteenFlowerDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="NeinteenFlowerDBEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="MsEmployees" EntityType="Self.MsEmployee" />
           <EntitySet Name="MsFlowers" EntityType="Self.MsFlower" />
           <EntitySet Name="MsFlowerTypes" EntityType="Self.MsFlowerType" />
           <EntitySet Name="MsMembers" EntityType="Self.MsMember" />
           <EntitySet Name="TrDetails" EntityType="Self.TrDetail" />
           <EntitySet Name="TrHeaders" EntityType="Self.TrHeader" />
-          <AssociationSet Name="FK__TrHeader__Employ__2A4B4B5E" Association="Self.FK__TrHeader__Employ__2A4B4B5E">
-            <End Role="MsEmployee" EntitySet="MsEmployees" />
-            <End Role="TrHeader" EntitySet="TrHeaders" />
-          </AssociationSet>
           <AssociationSet Name="FK__MsFlower__Flower__2D27B809" Association="Self.FK__MsFlower__Flower__2D27B809">
             <End Role="MsFlowerType" EntitySet="MsFlowerTypes" />
             <End Role="MsFlower" EntitySet="MsFlowers" />
@@ -329,7 +297,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="NeinteenFlowerDBModelStoreContainer" CdmEntityContainer="NeinteenFlowerDBEntities">
+        <EntityContainerMapping StorageEntityContainer="NeinteenFlowerDBModelStoreContainer" CdmEntityContainer="NeinteenFlowerDBEntities1">
           <EntitySetMapping Name="MsEmployees">
             <EntityTypeMapping TypeName="NeinteenFlowerDBModel.MsEmployee">
               <MappingFragment StoreEntitySet="MsEmployee">
@@ -354,6 +322,7 @@
                 <ScalarProperty Name="FlowerDescription" ColumnName="FlowerDescription" />
                 <ScalarProperty Name="FlowerPrice" ColumnName="FlowerPrice" />
                 <ScalarProperty Name="FlowerImage" ColumnName="FlowerImage" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

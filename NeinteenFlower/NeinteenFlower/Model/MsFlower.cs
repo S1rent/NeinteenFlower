@@ -26,6 +26,7 @@ namespace NeinteenFlower.Model
         public string FlowerDescription { get; set; }
         public int FlowerPrice { get; set; }
         public string FlowerImage { get; set; }
+        public Nullable<int> IsDeleted { get; set; }
     
         public virtual MsFlowerType MsFlowerType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

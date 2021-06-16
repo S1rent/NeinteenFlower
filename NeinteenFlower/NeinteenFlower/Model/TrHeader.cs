@@ -22,11 +22,10 @@ namespace NeinteenFlower.Model
     
         public int TransactionID { get; set; }
         public int MemberID { get; set; }
-        public int EmployeeID { get; set; }
+        public Nullable<int> EmployeeID { get; set; }
         public string TransactionDate { get; set; }
         public Nullable<int> DiscountPercentage { get; set; }
     
-        public virtual MsEmployee MsEmployee { get; set; }
         public virtual MsMember MsMember { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TrDetail> TrDetails { get; set; }

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="NeinteenFlowerDBModelStoreContainer" CdmEntityContainer="NeinteenFlowerDBEntities">
+  <EntityContainerMapping StorageEntityContainer="NeinteenFlowerDBModelStoreContainer" CdmEntityContainer="NeinteenFlowerDBEntities1">
     <EntitySetMapping Name="MsEmployees">
       <EntityTypeMapping TypeName="NeinteenFlowerDBModel.MsEmployee">
         <MappingFragment StoreEntitySet="MsEmployee">
@@ -25,6 +25,7 @@
           <ScalarProperty Name="FlowerDescription" ColumnName="FlowerDescription" />
           <ScalarProperty Name="FlowerPrice" ColumnName="FlowerPrice" />
           <ScalarProperty Name="FlowerImage" ColumnName="FlowerImage" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -8,7 +8,7 @@ namespace NeinteenFlower.Repository
 {
     public class TransactionRepository
     {
-        NeinteenFlowerDBEntities db = new NeinteenFlowerDBEntities();
+        NeinteenFlowerDBEntities1 db = new NeinteenFlowerDBEntities1();
         public static TransactionRepository shared = new TransactionRepository();
         private TransactionRepository() { }
 

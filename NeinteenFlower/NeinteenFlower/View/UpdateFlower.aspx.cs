@@ -12,21 +12,40 @@ namespace NeinteenFlower.View
 {
     public partial class UpdateFlower : System.Web.UI.Page
     {
-        static MsFlower mf;
+        UpdateFlowerController ufc = new UpdateFlowerController();
         string id;
-        int id_;
+        int id_ = -1;
         protected void Page_Load(object sender, EventArgs e)
         {
-            id = Request.QueryString["id"];
-            id_ = int.Parse(id);
+            var queryID = Request.QueryString["id"];
+            var queryEmail = Session["user_email"];
+            if (queryID == null || queryEmail == null)
+            {
+                Response.Redirect("Home.aspx");
+            }
+
+            id = queryID.ToString();
+            try
+            {
+                id_ = int.Parse(id);
+            }
+            catch
+            {
+                Response.Redirect("ManageFlower.aspx");
+            }
+
+            if(!ufc.CheckIfUserIsEmployee(queryEmail.ToString()))
+            {
+                Response.Redirect("ManageFlower.aspx");
+            }
 
             if (!Page.IsPostBack)
             {
-                mf = FlowerRepository.shared.GetFlowerById(id_);
+                MsFlower mf = ufc.GetFlowerByID(id_);
                 
-                if (mf == null)
+                if (mf == null || mf.IsDeleted == 1)
                 {
-
+                    Response.Redirect("ManageFlower.aspx");
                 }
                 else
                 {
@@ -53,8 +72,6 @@ namespace NeinteenFlower.View
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            UpdateFlowerController ufc = new UpdateFlowerController();
-
             string name = NameTxt.Text;
             string desc = DescTxt.Text;
             string type = TypeTxt.Text;
@@ -68,6 +85,7 @@ namespace NeinteenFlower.View
             }
             else
             {
+                lblMsg.ForeColor = System.Drawing.Color.Red;
                 lblMsg.Text = msg;
             }
         }

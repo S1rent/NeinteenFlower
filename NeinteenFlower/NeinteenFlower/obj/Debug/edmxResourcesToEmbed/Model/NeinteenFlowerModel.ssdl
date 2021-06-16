@@ -24,6 +24,7 @@
     <Property Name="FlowerDescription" Type="varchar" MaxLength="255" Nullable="false" />
     <Property Name="FlowerPrice" Type="int" Nullable="false" />
     <Property Name="FlowerImage" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="IsDeleted" Type="int" />
   </EntityType>
   <EntityType Name="MsFlowerType">
     <Key>
@@ -60,7 +61,7 @@
     </Key>
     <Property Name="TransactionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MemberID" Type="int" Nullable="false" />
-    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" />
     <Property Name="TransactionDate" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="DiscountPercentage" Type="int" />
   </EntityType>
@@ -100,18 +101,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__TrHeader__Employ__2A4B4B5E">
-    <End Role="MsEmployee" Type="Self.MsEmployee" Multiplicity="1" />
-    <End Role="TrHeader" Type="Self.TrHeader" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="MsEmployee">
-        <PropertyRef Name="EmployeeID" />
-      </Principal>
-      <Dependent Role="TrHeader">
-        <PropertyRef Name="EmployeeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__TrHeader__Member__29572725">
     <End Role="MsMember" Type="Self.MsMember" Multiplicity="1" />
     <End Role="TrHeader" Type="Self.TrHeader" Multiplicity="*" />
@@ -142,10 +131,6 @@
     <AssociationSet Name="FK__TrDetail__Transa__300424B4" Association="Self.FK__TrDetail__Transa__300424B4">
       <End Role="TrHeader" EntitySet="TrHeader" />
       <End Role="TrDetail" EntitySet="TrDetail" />
-    </AssociationSet>
-    <AssociationSet Name="FK__TrHeader__Employ__2A4B4B5E" Association="Self.FK__TrHeader__Employ__2A4B4B5E">
-      <End Role="MsEmployee" EntitySet="MsEmployee" />
-      <End Role="TrHeader" EntitySet="TrHeader" />
     </AssociationSet>
     <AssociationSet Name="FK__TrHeader__Member__29572725" Association="Self.FK__TrHeader__Member__29572725">
       <End Role="MsMember" EntitySet="MsMember" />

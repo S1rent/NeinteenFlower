@@ -13,10 +13,10 @@ namespace NeinteenFlower.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class NeinteenFlowerDBEntities : DbContext
+    public partial class NeinteenFlowerDBEntities1 : DbContext
     {
-        public NeinteenFlowerDBEntities()
-            : base("name=NeinteenFlowerDBEntities")
+        public NeinteenFlowerDBEntities1()
+            : base("name=NeinteenFlowerDBEntities1")
         {
         }
     

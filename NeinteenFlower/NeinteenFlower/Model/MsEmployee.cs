@@ -14,12 +14,6 @@ namespace NeinteenFlower.Model
     
     public partial class MsEmployee
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public MsEmployee()
-        {
-            this.TrHeaders = new HashSet<TrHeader>();
-        }
-    
         public int EmployeeID { get; set; }
         public string EmployeeName { get; set; }
         public string EmployeeDOB { get; set; }
@@ -29,8 +23,5 @@ namespace NeinteenFlower.Model
         public string EmployeeEmail { get; set; }
         public int EmployeeSalary { get; set; }
         public string EmployeePassword { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TrHeader> TrHeaders { get; set; }
     }
 }
