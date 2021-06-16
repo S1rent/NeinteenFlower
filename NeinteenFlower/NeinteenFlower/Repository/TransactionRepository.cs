@@ -99,5 +99,13 @@ namespace NeinteenFlower.Repository
                 db.SaveChanges();
             }
         }
+
+        public List<TrDetail> GetTransactionDetailByFlowerID(int id)
+        {
+            List<TrDetail> transactionList = (from data in db.TrDetails
+                                              where data.FlowerID == id
+                                              select data).ToList();
+            return transactionList;
+        }
     }
 }
