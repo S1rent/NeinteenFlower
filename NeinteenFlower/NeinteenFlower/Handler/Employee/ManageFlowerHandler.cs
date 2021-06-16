@@ -11,7 +11,17 @@ namespace NeinteenFlower.Handler
     {
         public void DeleteFlowerById(int id)
         {
-            FlowerRepository.shared.DeleteFlowerById(id);
+            List<TrDetail> transactionList = TransactionRepository.shared.GetTransactionDetailByFlowerID(id);
+            if(transactionList.Count == 0)
+            {
+                //Hard Delete
+                FlowerRepository.shared.HardDeleteFlowerById(id);
+            }
+            else
+            {
+                //Soft Delete
+                FlowerRepository.shared.DeleteFlowerById(id);
+            }
         }
         public List<MsFlower> GetFlowerList()
         {

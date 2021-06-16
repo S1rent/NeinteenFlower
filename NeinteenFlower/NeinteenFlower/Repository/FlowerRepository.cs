@@ -42,6 +42,18 @@ namespace NeinteenFlower.Repository
             }
         }
 
+        public void HardDeleteFlowerById(int id)
+        {
+            MsFlower f = (from x in db.MsFlowers
+                          where x.FlowerID == id
+                          select x).FirstOrDefault();
+            if (f != null)
+            {
+                db.MsFlowers.Remove(f);
+                db.SaveChanges();
+            }
+        }
+
         public void InsertFlower(MsFlower flower)
         {
             db.MsFlowers.Add(flower);
